@@ -48,53 +48,46 @@
 
 \section{Introduction}
 
-In a pioneering paper, Kam [1972 ref] showed that measurement of angular correlations of x-ray scattering from an ensemble of randomly oriented particles could in principle give information about the internal structure of the particles beyond usual small and wide angle scattering measurements. 
+In a pioneering paper, Kam [1] showed that correlated x-ray scattering (CXS) from an ensemble of randomly oriented particles could in principle reveal information about the internal structure of the particles beyond usual small and wide angle solution scattering measurements. The extraction of such information in the absence of an ordered system ( e.g. a crystal) can be beneficial in biological studies, as many biological processes are inherently disordered (e.g. proteins in solution ).
 
-WHY DO WE WANT CXS? \\
--- disordered systems (e.g. biology in solution, no xtals needed!) \\
--- beat SNR of single molecule diffraction
+In order to gauge the feasibility of Kam's method at atomic length scales, and to assess the difficulties associated with such a sensitive measurement, we conducted experiments measuring CXS from silver nanoparticle (NP) solutions at wide angles. Crucially, each measurement was conducted on an ensemble of NPs oriented randomly in three dimensions, extending previous work done in two dimensions  [2], at small angles in 3-dimensions [3-4], and on single particles in 3-dimensions [5-6].  
 
-WHY IS NOW THE TIME TO DO IT? \\
--- around since 70s, but now we have FELs/next gen synchrotron
-
-In order to investigate whether this approach has the potential for determining structural information at atomic resolution, we conducted experiments measuring correlated x-ray scattering (CXS) at wide angles. Crucially, these experiments were conducted on an ensemble of particles oriented randomly in three dimensions, extending previous work done in two dimensions [CITE], at small angles [CITE], and on single particles [CITE]. Our experiments have the potential to yield \AA\ scale information of the structure of a single particle from measurements on an ensemble of $\sim 10^8$ silver nanoparticles whose orientations are fully disordered in 3 dimensions.
-
-By successfully measuring CXS signal on an ensemble of silver nanoparticles, we demonstrate the feasibility of extracting useful structural information from three dimensional ensemble experiments. Our hope is that these methods can be extended \textit{e.g.}~to biological samples, most notably proteins in solution.
+By successfully measuring CXS signal from an ensemble of silver NPs, we have demonstrated the effectiveness of Kam's method given the current advances in x-ray technology. This experiment will serve as a benchmark for future experiments involving much weaker scatterers, such as proteins. It is our hope that the refinement of our our analysis techniques on a well known sample such as silver NPs will help facilitate the extension of CXS to studies of biomolecules in solution.
 
 \section{Theory}
 
+Let $S( \vec{q},\omega)$ represent the structure factor of an oriented particle in solution, i.e.
+
 \[
-C(q_1, q_2) = \langle \delta I(q_1) \, \delta I(q_2) \rangle
+S(\vec{q},\omega) = | \int \rho (\hat{R}(\omega)\cdot \vec{r} ) e^ { i \vec{q} \cdot \vec{r} } d\vec{r} | ^{2}
 \]
 
-The correlator for pairs of scattering events falling on pixels $\vec{q}_1$ and $\vec{q}_2$ is the angular average of the product of numbers of photons $\langle n_{\vec{q}_1}n_{\vec{q}_2}\rangle$ minus the product of the angular averages $\langle n_{\vec{q}_1}\rangle$ and $\langle n_{\vec{q}_2}\rangle$.
-Here the anglar averages are over the azimuthal angles subtended by the scattering vectors of the 2-dimensional pixels. Writing $\vec{q}=[q\cos(\phi),q\sin(\phi)]$ we have 
-$\langle n_{\vec{q}_1}\rangle={1\over 2\pi}\int d\phi\ n(|q|,\phi) $ and
+where $\rho $ is the electron density, $\omega$ is a triple of Euler angles, and $\hat{R}(\omega)$ is a 3-dimensional rotation operator.
+
+
+Kam showed that the correlation function
+
 \be
-\langle n_{\vec{q}_1}n_{\vec{q}_2}\rangle={1\over 2\pi}\int_0^{2\pi} d\phi\ n(q_1,\phi+\theta)n(q_2,\phi),
-\ee
-and the correlator becomes 
-\be
-C(q_1,q_2,\theta)=\langle n_{\vec{q}_1}n_{\vec{q}_2}\rangle-\langle n_{\vec{q}_1}\rangle \langle n_{\vec{q}_2}\rangle
+C(\vec{q}_1, \vec{q}_2) \equiv \int S( \vec{q}_{1},\omega ) S( \vec{q}_{2},\omega ) \, d \omega
 \ee
 
-For the case of silver or gold  nanoparticles we can represent them by the simplest model consisting of an fcc lattice cutoff by a spherical boundary. The scattering can then be represented by reciprocal lattice vectors cutting the Ewald sphere and giving rise to Bragg peaks broadened owing to the  the finite size of the nanoparticles.  This will result in a series of ``powder rings" corresponding to the different vectors of the reciprocal lattice. The thickness of the rings is determined by the population of particle orientations $\omega_i$ such that the reciprocal lattice vectors  satisfy the Bragg condition $q_{hkl}={2\pi\over\lambda}\sin 2\theta_{hkl}$ where $q_{hkl}$ is the $[hkl]$ vector of the reciprocal lattice and  $2\theta_{hkl}$ the corresponding scattering angle. The
-strongest Bragg ring is $q_{111}$ which is equal to the diagonal of the reciprocal lattice bcc primitive cell, 
-$q_{111}=\sqrt{3}a/2=2.66$\AA$^{-1}$ with 8 Bragg peaks. Using the Scherrer formula relating the width of a Bragg peak to the particle size, we find that $\approx 8\%$ of the silver NPs will contribute to the first powder ring. 
+may be extracted from a CXS measurement where one repeatedly records snapshots of a solution of $N$ identical particles, with each snapshot representing a unique ensemble of particle orientations. Kam argued (neglecting inter-particle scattering interference ) that averaging correlations of intensity fluctuations on each snapshot would result in the construction of (1) , i.e.
 
-The correlated double scattering events then correspond to the sub-population of orientations in the first Bragg ring that simultaneously subtend a second Bragg peak in the ring. these are obtained by rotating the 
-reciprocal lattice about an axis normal to the scattering plane of the first reciprocal lattice vector and finding the fraction of the first-Bragg orientations which simultaneously satisfy the second Bragg condition. 
-We find that the fraction of orientations which satisfy the double scattering condition come to around about 1.3\% of the 1st Bragg peaks. Thus the correlated double scattering consists of double peaks corresponding to the simultaneous scattering at the first and second Bragg conditions.
+\be
+\langle \delta n_{k}(\vec{q}_1) \, \delta n_{k}(\vec{q}_2) \rangle_{k} \Rightarrow C(\vec{q}_1, \vec{q}_2) 
+\ee
+
+where $n_{m}(\vec{q})$ is the total photons scattered from all particles into momentum transfer vector $\vec{q}$ on snapshot $m$ and $\delta n_{k}(\vec{q}) = n_{k}(\vec{q}) - \langle n_{k}(\vec{q}) \rangle_{k}$.
+ 
+For the case of silver nanoparticles we can represent them by the simplest model consisting of a face-centered-cubic lattice cutoff by a spherical boundary. The scattering can then be represented by reciprocal lattice vectors cutting the Ewald sphere and giving rise to Bragg peaks broadened owing to the the finite size of the nanoparticles. Hence, each snapshot records a series of ``powder rings" corresponding to the different vectors of the reciprocal lattice, and the different particle orientations. We denote the magnitude of the strongest Bragg ring by $|\vec{q}_{111}|$ which is equal to the space diagonal of the reciprocal lattice body-centered-cubic primitive cell, $|\vec{q}_{111}|=\sqrt{3}a/2=2.66  $\AA$ ^{-1}$. Each NP has 8 reciprocal lattice points at this magnitude. Using the Scherrer formula relating the width of a Bragg peak to the particle size (our NP distribution was peaked at 20 nm) , along with geometrical arguments discussed below, we find that $\approx 8.3\%$ of silver NP orientations will contribute to the first powder ring. Call this set of orientations $\Omega_{111,1}$. The sub-population of NP orientations in $\Omega_{111,1}$ that simultaneously subtend a second Bragg peak on the Ewald sphere at $|\vec{q}_{111}|$ will give rise to an auto-correlation signal along the $|\vec{q}_{111}|$ powder ring. Our best estimates suggest that $\approx 0.17\%$ of orientations in $\Omega_{111,1}$  satisfy this criterion, or roughly $1.1\%$ of all NP orientations. Call this set of orientations $\Omega_{111,2}$. We arrive at these numbers by tracing out volumes of rotation of the reciprocal lattice points and determining which fractions intersect the Ewald sphere. To determine $\Omega_{111,1}$ we rotate the reciprocal lattice points over all possible orientations. To determine $\Omega_{111,2}$ we rotate the reciprocal lattice about one of the 8 vectors with magnitude $|\vec{q}_{111}|$, hence fixing 1 lattice point on the Ewald sphere and rotating until another intersects. These arguments are simple in nature, and deserve to be properly verified. We simulated these volumes of intersection and found $\Omega_{111,1}$ and $\Omega_{111,2}$ to represent $8.8\%$ and $1.3\%$ of all NP orientations respectively, in good agreement with our geometrical arguments [figure ?].
+
 
 \section{Methods}
-Our samples consisted of silver nanoparticles in a colloidal suspension. Each particle was roughly 20
-nanometers in size, but we observed some particles that were substantially larger (WHY/PROOF).
-The sample was cooled to 100 Kelvin using a nitrogen cryo jet to ensure that the particles remained immobilized during each exposure. This also ensured that  any heating due to the x-ray beam was minimal. The nanoparticles were suspended in a glycerol-based antifreeze
-in order to prevent the formation of solvent crystals at the low temperature. By
+A snapshot in (2) is supposed to represent an ensemble of particles frozen at an instant in time, however exposure times are finite. Therefore, the sample was cooled to 100 Kelvin using a nitrogen cryo jet to ensure that the particles remained immobilized during each exposure. This also ensured that  any heating due to the x-ray beam was minimal. We had an estimated $10^{9}$  20 nm NPs per snapshot, but we observed significant numbers of NPs that were up to 50 nm in size.  The NPs were held in colloidal suspension with glycerol-based antifreeze used to prevent the formation of solvent crystals at the low temperature. By
 monitoring the intensity at constant scattering angle one can check for sample
 damage and diffusion.
 
-To house the solutions we used kapton capillaries with a 500 and 600 micron inner
+To house the solutions we used kapton capillaries with a 500 and 600 $\mu$m inner
 and outer diameter respectively. Kapton scatters into relatively lower angles as
 does glycerol, hence we did not anticipate corrupting our silver nanoparticle signal with scattering from the kapton or glycerol.  The experiment was conducted at the micro-crystallography beamline (12-2) at
 SSRL. Samples were prepared a day early and stored in a liquid nitrogen bath.
@@ -102,8 +95,7 @@ Samples were loaded and oriented in the X-ray beam using the Stanford Automated 
 Using a liquid nitrogen-cooled double crystal monochromator we tuned the beam
 energy to 17 keV. The beam was focused down to about $20 \times 50 \mu$m$^2$ using Rh
 coated Kirkpatrick-Baez mirrors.
-Images were taken using a Dectris Pilatus 6M pixel detector. Our goal was to record as many images as possible, each one representing a different ensemble of
-fixed particle orientations. The sample holder was equipped to automatically 
+Snapshots were recorded on a Dectris Pilatus 6M pixel detector. Our goal was to record as many snapshots as possible, each one representing a different ensemble of particle orientations frozen in time. The sample holder was equipped to automatically 
 rotate the capillary about its longitudinal axis. The capillary was oriented such that
 its longitudinal axis was perpendicular to the beam (Figure needed) and then it
 was rotated through a 150 degree angle. The photon counts were read out and
@@ -116,10 +108,16 @@ the beam through the sample (500 $\mu$m). Between scans we moved the capillary
 longitudinally, so as to always probe different regions of the sample, and hence
 different ensembles of particle orientations.
 
-Data from 15,496 shots was collected and analyzed. A bicubic interpolation algorithm was used to convert the cartesian pixel lattice to polar coordinates for later analysis.
+The intensity fluctuation correlations in (2) were constructed by auto- and cross- correlating the powder rings on each snapshot. For example, assuming an area detector perpendicular to the x-ray beam defined by the coordinates $(q^{\,\perp},\phi)$, the auto-correlation function of the $q_{111}$ powder ring
+\beq
+\left \langle \delta n_{k}(\vec{q}_{111,1}) \, \delta n_{k}(\vec{q}_{111,2}) \right \rangle_{k}  &=& \left \langle \delta n_{k} ( q_{111},\phi_{1}, \theta_{111} ) \,\, \delta n_{k} (q_{111},\phi_{2}, \theta_{111}  ) \right \rangle_{k} \nonumber \\
+&\Rightarrow& \left \langle \int_{0}^{2\pi} \delta n_{k} ( q_{111}^{\,\perp},\phi ) \,\, \delta n_{k} (q_{111}^{\,\perp},\phi + \Delta\, \phi )\, d\phi  \right \rangle_{k}
+\eeq
+should exhibit CXS peaks at values of $\Delta\, \phi = \phi_{1} - \phi_{2}$ corresponding to the geometrical separation of two NP Bragg reflections at $q_{111}$.
+
+Data from about 15,496 shots was collected and analyzed. A bicubic interpolation algorithm was used to convert the cartesian pixel lattice to polar coordinates for calculation of equations like (3).
 
 \section{Results}
-
 
 In order to eliminate any source of systematic noise in the intensity measurement
 we applied a binary  filter to the data: intensities greater than a chosen threshold
@@ -142,7 +140,19 @@ As originally shown by Kam, the correlator for scattering from an arbitrary mole
 
 Our results show that it is possible to obtain atomic scale information on the internal structure, for the very simple example  of a silver nanoparticle, for a bulk sample containing of order $10^8$ identical but randomly oriented particles. These results suggest that it should be feasible to obtain more detailed atomic scale constraints on models  of more complex biomolecules by measuring scattering using x-ray pulses from xFELs (refs Hajdu, Chapman - Spence). Such measurements have the potential to scatter many more photons/molecule, yielding more detailed $q_1,q_2,\psi$ information on the correlators. 
 
+\section{References}
 
+[1] Kam Z 1977 Determination of macromolecular structure in solution by spatial correlation of scattering fluctuations. Macromolecules 10 927-34
+
+[2] Saldin D K, Poon H C, Bogan M J, Marchesini S, Shapiro D A, Kirian R A, Weierstall U and Spence J C H 2011 New light on disordered ensembles: ab initio structure determination of one particle from scattering fluctuations of many copies, Phys. Rev. Lett. 106 115501
+
+[3] Kam Z, Koch M H J, and Bordas J 1981 Fluctuation x-ray-scattering from biological particles in frozen solution by using synchrotron radiation. Proc. Natl. Acad. Sci. USA 78 3559-62
+
+[4] Wochner P, Gutt C, Autenrieth T, Demmer T, Bugaev V, Ortiz A D, Duri A, Zontone F, Grubel G and Dosch H 2009 X-ray cross correlation analysis uncovers hidden local symmetries in disordered matter. Proc. Natl Acad. Sci. USA 106 11511-4
+
+[5] Kam Z and Gafni I 1985 3-dimensional reconstruction of the shape of human wart virus using spatial correlations. Ultramicroscopy 17 251Ð62
+
+[6] Starodub D \textit{et al.} 2010 Single-particle structure determination by correlations of snapshot x-ray diffraction patterns. Nature Communications 3. (DOI: 10.1038/ncomms2288)
 
 \end{document}
 
