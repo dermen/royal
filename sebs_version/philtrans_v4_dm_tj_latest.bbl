@@ -1,0 +1,121 @@
+\begin{thebibliography}{10}
+
+\bibitem{Chen:2013io}
+Gang Chen, Peter~H Zwart, and Dongsheng Li.
+\newblock {Component Particle Structure in Heterogeneous Disordered Ensembles
+  Extracted from High-Throughput Fluctuation X-Ray Scattering}.
+\newblock {\em Phys. Rev. Lett.}, 110(19):195501, May 2013.
+
+\bibitem{Elser:2011ez}
+Veit Elser.
+\newblock {Strategies for processing diffraction data from randomly oriented
+  particles}.
+\newblock {\em Ultramicroscopy}, 111(7):788--792, June 2011.
+
+\bibitem{Henke:1993wx}
+B~L Henke, E~M Gullikson, and J~C Davis.
+\newblock {X-Ray Interactions: Photoabsorption, Scattering, Transmission, and
+  Reflection at E= 50-30,000 eV, Z= 1-92}.
+\newblock {\em Atomic data and nuclear data tables}, 1993.
+
+\bibitem{Kam:1977wc}
+Z~Kam.
+\newblock {Determination of macromolecular structure in solution by spatial
+  correlation of scattering fluctuations}.
+\newblock {\em Macromolecules}, 10(5):927--934, 1977.
+
+\bibitem{Kam:1985tz}
+Z~Kam and I~Gafni.
+\newblock {Three-dimensional reconstruction of the shape of human wart virus
+  using spatial correlations.}
+\newblock {\em Ultramicroscopy}, 17(3):251--262, 1985.
+
+\bibitem{Kam:1981ua}
+Z~Kam, M~H Koch, and J~Bordas.
+\newblock {Fluctuation x-ray scattering from biological particles in frozen
+  solution by using synchrotron radiation.}
+\newblock {\em Proceedings of the National Academy of Sciences},
+  78(6):3559--3562, June 1981.
+
+\bibitem{Kirian:2011bq}
+Richard~A Kirian, Kevin~E Schmidt, Xiaoyu Wang, R~Bruce Doak, and John C~H
+  Spence.
+\newblock {Signal, noise, and resolution in correlated fluctuations from
+  snapshot small-angle x-ray scattering}.
+\newblock {\em Phys. Rev. E}, 84(1):011921, July 2011.
+
+\bibitem{Kurta:2013to}
+R~P Kurta, M~Altarelli, and I~A Vartanyants.
+\newblock {X-ray cross-correlation analysis of disordered systems: potentials
+  and limitations}.
+\newblock {\em arXiv}, February 2013.
+
+\bibitem{Kurta:2012cb}
+R~P Kurta, M~Altarelli, E~Weckert, and I~A Vartanyants.
+\newblock {X-ray cross-correlation analysis applied to disordered
+  two-dimensional systems}.
+\newblock {\em arXiv}, February 2012.
+
+\bibitem{Liu:2013dv}
+Haiguang Liu, Billy~K Poon, Dilano~K Saldin, John C~H Spence, and Peter~H
+  Zwart.
+\newblock {Three-dimensional single-particle imaging using angular correlations
+  from X-ray laser data}.
+\newblock {\em Acta Crystallogr A Found Crystallogr}, 69(4):365--373, May 2013.
+
+\bibitem{Neutze:2000ih}
+R~Neutze, R~Wouts, D~van~der Spoel, E~Weckert, and J~Hajdu.
+\newblock {Potential for biomolecular imaging with femtosecond X-ray pulses.}
+\newblock {\em Nature}, 406(6797):752--757, August 2000.
+
+\bibitem{Poon:2013ia}
+H~C Poon, P~Schwander, M~Uddin, and D~K Saldin.
+\newblock {Fiber Diffraction without Fibers}.
+\newblock {\em Phys. Rev. Lett.}, 110(26):265505, June 2013.
+
+\bibitem{Saldin:2011ch}
+D~Saldin, H~Poon, M~Bogan, S~Marchesini, D~Shapiro, R~Kirian, U~Weierstall, and
+  J~Spence.
+\newblock {New Light on Disordered Ensembles: Ab Initio Structure Determination
+  of One Particle from Scattering Fluctuations of Many Copies}.
+\newblock {\em Phys. Rev. Lett.}, 106(11):115501, March 2011.
+
+\bibitem{Saldin:2010bx}
+D~K Saldin, H~C Poon, V~L Shneerson, M~Howells, H~N Chapman, R~A Kirian, K~E
+  Schmidt, and J~C~H Spence.
+\newblock {Beyond small-angle x-ray scattering: Exploiting angular
+  correlations}.
+\newblock {\em Phys. Rev. B}, 81(17):174105, May 2010.
+
+\bibitem{Saldin:2009jj}
+D~K Saldin, V~L Shneerson, R~Fung, and A~Ourmazd.
+\newblock {Structure of isolated biomolecules obtained from ultrashort x-ray
+  pulses: exploiting the symmetry of random orientations}.
+\newblock {\em J. Phys.: Condens. Matter}, 21(13):134014, March 2009.
+
+\bibitem{Spence:2012eo}
+J~C~H Spence, U~Weierstall, and H~N Chapman.
+\newblock {X-ray lasers for structural and dynamic biology}.
+\newblock {\em Rep. Prog. Phys.}, 75(10):102601, September 2012.
+
+\bibitem{Starodub:1fy}
+D~Starodub, A~Aquila, S~Bajt, M~Barthelmess, A~Barty, C~Bostedt, J~D Bozek,
+  N~Coppola, R~B Doak, S~W Epp, B~Erk, L~Foucar, L~Gumprecht, C~Y Hampton,
+  A~Hartmann, R~Hartmann, P~Holl, S~Kassemeyer, N~Kimmel, H~Laksmono, M~Liang,
+  N~D Loh, L~Lomb, A~V Martin, K~Nass, C~Reich, D~Rolles, B~Rudek, A~Rudenko,
+  J~Schulz, R~L Shoeman, R~G Sierra, H~Soltau, J~Steinbrener, F~Stellato,
+  S~Stern, G~Weidenspointner, M~Frank, J~Ullrich, L~Str~uuml der,
+  I~Schlichting, H~N Chapman, J~C~H Spence, and M~J Bogan.
+\newblock {Single-particle structure determination by correlations of snapshot
+  X-ray diffraction patterns}.
+\newblock {\em Nature Communications}, 3:1276--7, 1.
+
+\bibitem{Wochner:2009ia}
+Peter Wochner, Christian Gutt, Tina Autenrieth, Thomas Demmer, Volodymyr
+  Bugaev, Alejandro~D{\'\i}az Ortiz, Agn{\`e}s Duri, Federico Zontone, Gerhard
+  Gr{\"u}bel, and Helmut Dosch.
+\newblock {X-ray cross correlation analysis uncovers hidden local symmetries in
+  disordered matter.}
+\newblock {\em P Natl Acad Sci Usa}, 106(28):11511--11514, July 2009.
+
+\end{thebibliography}
