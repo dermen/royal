@@ -1,194 +1,137 @@
 from pylab import *
 import h5py
+from matplotlib.gridspec import GridSpec
 
-f = h5py.File('/mnt/ssrl/silver/12dec2012/ssrl-silver-all.hdf5' ) 
-
-cor1 = array( f['cor1'] )
-cor2 = array( f['cor2'] )
-cor12 = array( f['cor12'] )
-
-cor1_mean = cor1.mean(0)
-cor2_mean = cor2.mean(0)
-cor12_mean = cor12.mean(0)
-
-step = 1
-
-cor1_mean = convolve(cor1_mean, ones( (step,))/step )[step-1:][::step]
-cor2_mean = convolve(cor2_mean, ones( (step,))/step )[step-1:][::step]
-cor12_mean = convolve(cor12_mean, ones( (step,))/step )[step-1:][::step]
-
-cor1_std = cor1.std(0)
-cor2_std = cor2.std(0)
-cor12_std = cor12.std(0)
-
-cor1_std = convolve(cor1_std, ones( (step,))/step )[step-1:][::step]
-cor2_std = convolve(cor2_std, ones( (step,))/step )[step-1:][::step]
-cor12_std = convolve(cor12_std, ones( (step,))/step )[step-1:][::step]
-
-cor1_err = cor1_std / sqrt( cor1.shape[0] ) 
-cor2_err = cor2_std / sqrt( cor2.shape[0] ) 
-cor12_err = cor12_std / sqrt( cor12.shape[0] )
-
-
-figure( 1, figsize=(1,5) )
-
-subplot(212)
-
-phis = linspace( 0,2*pi,cor1_mean.shape[0] ) 
-offset_1 = 0.0005
-offset_2 = -0.00005
-offset_12 = 0.00085
-
-#data means
-color = 'b'
-lw = 2
-ls='d'
-ms=4
-plot( phis, cor1_mean + offset_1,'d',color=color,ms=ms)
-plot( phis, cor2_mean+offset_2,'d',color=color,ms=ms)
-plot( phis, cor12_mean+offset_12,'d',color=color,ms=ms)
-
-# data errors
-alpha = 0.4
-color = 'b'
-fill_between( phis, cor1_mean+offset_1,  cor1_mean + 1.96*cor1_err+offset_1, color=color,alpha=alpha )
-fill_between( phis, cor1_mean+offset_1,  cor1_mean - 1.96*cor1_err+offset_1, color=color,alpha=alpha )
-fill_between( phis, cor2_mean+offset_2,  cor2_mean + 1.96*cor2_err + offset_2,color=color,alpha=alpha )
-fill_between( phis, cor2_mean+offset_2,  cor2_mean - 1.96*cor2_err + offset_2,color=color,alpha=alpha )
-fill_between( phis, cor12_mean + offset_12, cor12_mean + 1.96*cor12_err + offset_12,color=color,alpha=alpha )
-fill_between( phis, cor12_mean+offset_12, cor12_mean - 1.96*cor12_err + offset_12,color=color,alpha=alpha )
-
-# analytical
-lw=2
-alpha=0.2
-ls = '-'
-color='b'
-plot(ones(2)*(1.248),linspace(-1,1,2),color=color,ls=ls,lw=lw,alpha=alpha )
-plot(ones(2)*(1.945),linspace(-1,1,2),color=color,ls=ls,lw=lw,alpha=alpha )
-plot(ones(2)*(1.603),linspace(-1,1,2),color=color,ls=ls,lw=lw,alpha=alpha )
-plot(ones(2)*(0.97),linspace(-1,1,2),color=color,ls=ls,lw=lw,alpha=alpha )
-plot(ones(2)*(2.24),linspace(-1,1,2),color=color,ls=ls,lw=lw,alpha=alpha )
-
-peaks = [0.97, 1.248, 1.603, 1.945, 2.224]
-ticks = map( lambda x: str( int( x * 180 / pi)), peaks )
-gca().get_xaxis().set_ticks(peaks)
-gca().get_xaxis().set_ticklabels(ticks)
-xlim(0.86,2.37)
-ylim(-0.00037,0.0013)
-gca().get_yaxis().set_ticks([])
-xlabel(r"$\Delta$ (deg.)", fontsize=18)
-
-text(pi*60/180,0.0013-0.0002, 'B', color='r',fontsize=18)
-
-subplot(211)
-
-
+# read in the simulation
 ff = np.load( '/mnt/data/cxs_simulations/corz.npz' )
 c1 = ff['c1']
 c2 = ff['c2']
 c12= ff['c12']
 
+# read in the data
+f = h5py.File('/mnt/ssrl/silver/12dec2012/ssrl-silver-all.hdf5' ) 
+cor1 = array( f['cor1'] )
+cor2 = array( f['cor2'] )
+cor12 = array( f['cor12'] )
+cor1_mean = cor1.mean(0)
+cor2_mean = cor2.mean(0)
+cor12_mean = cor12.mean(0)
+cor1_std = cor1.std(0)
+cor2_std = cor2.std(0)
+cor12_std = cor12.std(0)
+cor1_err = cor1_std / sqrt( cor1.shape[0] ) 
+cor2_err = cor2_std / sqrt( cor2.shape[0] ) 
+cor12_err = cor12_std / sqrt( cor12.shape[0] )
+
+# analytical peaks
+peaks = [0.97, 1.248, 1.603, 1.945, 2.24]
+
+
+#ticks = map( lambda x: str( int( x * 180 / pi)), peaks )
+#gca().get_xaxis().set_ticks(peaks)
+#gca().get_xaxis().set_ticklabels(ticks)
+
+figure( 1, figsize=(5,7) )
+gs = GridSpec( 2,3 )
+ax1 = subplot( gs[0,:-1] ) # simulation
+ax2 = subplot( gs[1,:-1] ) # data
+ax3 = subplot( gs[:,-1]  ) # peak widths 
+
+
+# plot the simulation
 lw=2
 color = 'b'
 offset_1 = 0.005
 offset_2 = 0
 offset_12 = 0.018
 phis = linspace( 0,2*pi,c1.shape[0])
-plot(phis , c1 + offset_1 ,lw=lw,c=color)
-plot(phis , c2 + offset_2 ,lw=lw,c=color)
-plot(phis , c12 +offset_12,lw=lw,c=color)
+ax1.plot(phis , c1 + offset_1 ,lw=lw,color=color)
+ax1.plot(phis , c2 + offset_2 ,lw=lw,color=color)
+ax1.plot(phis , c12 +offset_12,lw=lw,color=color)
 
-#analytical
-lw=2
+
+lw=2   # plot analytical
 alpha=0.2
 ls = '-'
 color='b'
-plot(ones(2)*(1.248),linspace(-1,1,2),color=color,ls=ls,lw=lw,alpha=alpha )
-plot(ones(2)*(1.945),linspace(-1,1,2),color=color,ls=ls,lw=lw,alpha=alpha )
-plot(ones(2)*(1.603),linspace(-1,1,2),color=color,ls=ls,lw=lw,alpha=alpha )
-plot(ones(2)*(0.97),linspace(-1,1,2),color=color,ls=ls,lw=lw,alpha=alpha )
-plot(ones(2)*(2.24),linspace(-1,1,2),color=color,ls=ls,lw=lw,alpha=alpha )
+for peak in peaks:
+    ax1.plot(ones(2)*(peak),linspace(-1,1,2),color=color,ls=ls,lw=lw,alpha=alpha )
 
-gca().get_yaxis().set_ticks([])
-gca().get_xaxis().set_ticks([])
-xlim(0.86,2.37)
-ylim(-0.0039,0.032)
+ax1.get_yaxis().set_ticks([])
+ax1.get_xaxis().set_ticks([])
+ax1.set_xlim(0.86,2.37)
+ax1.set_ylim(-0.0039,0.032)
+ax1.text(pi*60/180,0.032-0.005, 'A', color='r',fontsize=18)
 
-text(pi*60/180,0.032-0.005, 'A', color='r',fontsize=18)
 
-#peaks = [0.97, 1.248, 1.603, 1.945, 2.224]
-#ticks = map( lambda x: str( int( x * 180 / pi)), peaks )
-#gca().get_xaxis().set_ticks(peaks)
-#gca().get_xaxis().set_ticklabels(ticks)
+# plot the data
+offset_1 = 0.0005
+offset_2 = -0.00005
+offset_12 = 0.00085
+color = 'b'
+lw = 2
+ls='d'
+ms=4
+phis = linspace( 0,2*pi,cor1_mean.shape[0] ) 
+ax2.plot( phis, cor1_mean + offset_1,'d',color=color,ms=ms)
+ax2.plot( phis, cor2_mean+offset_2,'d',color=color,ms=ms)
+ax2.plot( phis, cor12_mean+offset_12,'d',color=color,ms=ms)
 
-xlim(0.86,2.37)
-#xlabel(r"$\Delta$ (deg.)", fontsize=18)
+lw=2   # plot analytical
+alpha=0.2
+ls = '-'
+color='b'
+for peak in peaks:
+    ax2.plot(ones(2)*(peak),linspace(-1,1,2),color=color,ls=ls,lw=lw,alpha=alpha )
 
-"""
-subplot( 222 ) 
-gca().get_yaxis().set_ticks([])
-gca().get_xaxis().set_ticks([])
+ticks = map( lambda x: str( int( x * 180 / pi)), peaks )
+ax2.get_xaxis().set_ticks(peaks)
+ax2.get_xaxis().set_ticklabels(ticks)
+ax2.set_xlim(0.86,2.37)
+ax2.set_ylim(-0.00037,0.0013)
+ax2.get_yaxis().set_ticks([])
+ax2.set_xlabel(r"$\Delta$ (deg.)", fontsize=18)
+ax2.text(pi*60/180,0.0013-0.0002, 'B', color='r',fontsize=18)
+
+# plot the peak widths
+ax3.get_yaxis().set_ticks([])
+#gca().get_xaxis().set_ticks([])
 
 indL_sim = int( 2.19*4096/ (2*pi) )
 indR_sim = int( 2.31*4096/ (2*pi) )
 indL = int( 2.19*4320/(2*pi) )
 indR = int( 2.31*4320/(2*pi) )
 
-zoom12 = cor12.mean(0)[indL:indR]
-zoom12_sim = c12[indL_sim:indR_sim] 
+cor = cor12[:,indL:indR]
+cor_mean = cor.mean(0)
+cor_std = cor.std(0)
+cor_err = cor_std / sqrt( cor.shape[0] )
+
+sim = c12[indL_sim:indR_sim] 
 
 
-# take off 3 pixels for alignment ( we will mention discrepancy in paper, but this fig is to illustrate difference in width and works best if both peaks are aligned
-lw = 2
-color = 'b'
-plot( (zoom12 / zoom12.max())[3:],color=color, lw=lw,ls='-'  )
-plot( zoom12_sim / zoom12_sim.max(),color=color,lw=lw,ls='--' )
-ylim(-0.1,1.025)
-xlim(20,50)
-legend(['measured','simulated'], prop={'size':11},loc=4)
+cor_phis = linspace( 0,2*pi, cor12_mean.shape[0]  )[indL:indR]
+sim_phis = linspace( 0,2*pi, c12.shape[0]  )[indL_sim:indR_sim ]
 
+sim = sim * cor_mean.max() / sim.max()
 
-subplot( 224)
-
-phis = linspace( 0,2*pi,cor1_mean.shape[0] ) 
-#offset_1 = 0.0004
-#offset_2 = -0.00005
-#offset_12 = 0.00068
-
-offset_1 = 0.0005
-offset_2 = -0.00005
-offset_12 = 0.00085
-
-color = 'b'
-ms = 3.5
-plot( phis, cor1_mean + offset_1,'d',color=color,ms=ms)
-plot( phis, cor2_mean+offset_2,'d',color=color,ms=ms)
-plot( phis, cor12_mean+offset_12,'d',color=color,ms=ms)
-
-# data errors
 alpha = 0.4
-color = 'b'
-fill_between( phis, cor1_mean+offset_1,  cor1_mean + 1.96*cor1_err+offset_1, color=color,alpha=alpha )
-fill_between( phis, cor1_mean+offset_1,  cor1_mean - 1.96*cor1_err+offset_1, color=color,alpha=alpha )
-fill_between( phis, cor2_mean+offset_2,  cor2_mean + 1.96*cor2_err + offset_2,color=color,alpha=alpha )
-fill_between( phis, cor2_mean+offset_2,  cor2_mean - 1.96*cor2_err + offset_2,color=color,alpha=alpha )
-fill_between( phis, cor12_mean + offset_12, cor12_mean + 1.96*cor12_err + offset_12,color=color,alpha=alpha )
-fill_between( phis, cor12_mean+offset_12, cor12_mean - 1.96*cor12_err + offset_12,color=color,alpha=alpha )
+print cor_phis.shape, cor_mean.shape, cor_err.shape
+ax3.fill_between( cor_phis, cor_mean,  cor_mean + 1.96*cor_err, color=color,alpha=alpha )
+ax3.fill_between( cor_phis, cor_mean,  cor_mean - 1.96*cor_err, color=color,alpha=alpha )
+ax3.plot( cor_phis, cor_mean,'d', color=color, lw=lw)
+# shift sim by one dat point to align peaks to better compare widths ( 1 dat point = 360 / 4096 degrees, so no big deal )
+ax3.plot( sim_phis[1:], sim[:-1] ,'b--',color=color,lw=3 )
+ticks = [2.23, 2.245, 2.258]
+tick_labels = map( lambda x: '%.1f' % (x * 180 / pi), ticks )
+ax3.get_xaxis().set_ticks(ticks)
+ax3.get_xaxis().set_ticklabels(tick_labels)
 
+ax3.set_ylim(-7.083e-5,0.0004385 ) 
+ax3.set_xlim(2.225,2.262)
+ax3.set_xlabel(r"$\Delta$ (deg.)", fontsize=18)
+ax3.legend(['measured','simulated'], prop={'size':11},loc=9)
 
-#ticks = [str(int( pi/2 * 180 / pi ) ), str( int( ( 0.1 + 6.18 )* 90 / pi ) ) ,  str(int( 6.18 * 180 / pi ))]
-ticks = ["90", "180", "270"]
-gca().get_xaxis().set_ticks(ticks)
-ylim(-0.00037,0.0013)
-#ylim(-0.00037,0.00105)
-gca().get_yaxis().set_ticks([])
-gca().get_xaxis().set_ticks([ pi/2, pi, 3*pi/2])
-gca().get_xaxis().set_ticklabels(ticks)
-
-xlim(0.1,2*pi-0.1)
-xlabel(r"$\Delta$ (deg.)", fontsize=18)
-
-"""
-
+ax3.text(2.23,0.00036, 'C', color='r',fontsize=18)
 
 show()
