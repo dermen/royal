@@ -2,6 +2,7 @@
 
 \usepackage{amssymb}
 %\usepackage{epsf,psfig,graphicx}
+\usepackage{bm}
 \usepackage{epsf,graphicx}
 \usepackage{psfrag}
 \usepackage{amsmath}
@@ -16,6 +17,7 @@
 %\renewcommand{\baselinestretch}{1.5} 
 \parindent .0in 
 \parskip 10pt 
+
 
 \font \bigtenrm=cmmi10 scaled\magstep2 
 \def \dt {\delta\tau} 
@@ -84,7 +86,7 @@ where $n_{s}(\vec{q})$ is the total photons scattered from all particles in snap
 
 While one can show that inverting a complete set of correlations to an image of the electron density is an underdetermined problem \cite{Elser:2011ez}, we would like to emphasize that (\ref{correlation}) can be calculated using a model of $\rho$. This opens up the possibility for refining such a model against a CXS dataset using (\ref{converge}) \cite{Liu:2013dv, Chen:2013io, Saldin:2009jj}, especially in cases where prior information (such as protein primary sequence) can be included. Other routes to analyzing structure given CXS data include iterative phasing \cite{Saldin:2010bx}, implicit alignment of particles \cite{Poon:2013ia}, or direct analysis of local internal symmetries of the system \cite{Kurta:2012cb, Kurta:2013to}.
 
-We have computed the expected correlation function (\ref{correlation}) for the silver NPs studied as a benchmark for our experimental results (Figure 1) . A silver NP may be represented by a simple model consisting of a face-centered-cubic lattice cutoff by a spherical boundary. The scattering can then be represented by reciprocal lattice vectors cutting the Ewald sphere and giving rise to Bragg peaks broadened owing to the the finite size of the NPs.  Hence, each snapshot records a series of  Bragg rings. The sub-population of all NP orientations that simultaneously subtend two Bragg peaks on the Ewald sphere give rise to the correlations in (\ref{converge}). Let $\Delta$ be the angle between two scattering vectors $\vec{q}_{hkl}$ and $\vec{q}_{h'k'l'}$ satisfying the Bragg condition. Let $\phi$ be the azimuthal angle between the projections of $\vec{q}_{hkl}$ and $\vec{q}_{h'k'l'}$ into the plane perpendicular to an incident beam (corresponding to the angle between two pixels measuring $\vec{q}_{hkl}$ and $\vec{q}_{h'k'l'}$ on a farfield planar detector). Then
+We have computed the expected correlation function (\ref{correlation}) for the silver NPs studied as a benchmark for our experimental results (Figure 1-C) . A silver NP may be represented by a simple model consisting of a face-centered-cubic lattice cutoff by a spherical boundary. The scattering can then be represented by reciprocal lattice vectors cutting the Ewald sphere and giving rise to Bragg peaks broadened owing to the the finite size of the NPs.  Hence, each snapshot records a series of  Bragg rings. The sub-population of all NP orientations that simultaneously subtend two Bragg peaks on the Ewald sphere give rise to the correlations in (\ref{converge}). Let $\Delta$ be the angle between two scattering vectors $\vec{q}_{hkl}$ and $\vec{q}_{h'k'l'}$ satisfying the Bragg condition. Let $\phi$ be the azimuthal angle between the projections of $\vec{q}_{hkl}$ and $\vec{q}_{h'k'l'}$ into the plane perpendicular to an incident beam (corresponding to the angle between two pixels measuring $\vec{q}_{hkl}$ and $\vec{q}_{h'k'l'}$ on a farfield planar detector). Then
 
 \be \label{angular}
 C (|\vec{q}_{hkl}|,|\vec{q}_{h'k'l'}|, \Delta  ) = \left \langle \int_{0}^{2\pi} \delta n_{s} (| \vec{q}_{hkl}|,\phi ) \,\, \delta n_{s} (|\vec{q}_{h'k'l'}|,\phi + \Delta )\, d\phi  \right \rangle_{s}
@@ -110,16 +112,16 @@ A bicubic interpolation algorithm was used to convert the cartesian pixel lattic
 \begin{figure}
 \label{fig:results}
 \begin{center}
-\includegraphics[ ]{../figures/royal_soc_figure_1.png}
+\includegraphics[ ]{../figures/results_figure_2_better.png}
 \end{center}
-{\bf Figure 1} A) from top to bottom, measurements of $C (|\vec{q}_{111}|,|\vec{q}_{200}|, \Delta  )$, $C (|\vec{q}_{111}|,|\vec{q}_{111}|, \Delta  )$, and $C (|\vec{q}_{200}|,|\vec{q}_{200}|, \Delta  )$.  Vertical lines mark analytical predictions and shading represents 95\% confidence intervals.  B) overlay of two correlations peaks from A and C. The width of the correlation peak is inversely proportional to the NP size, hence we conclude that the majority of our CXS signal resulted from scattering off of particles larger than 20 nm. C) from top to bottom, 20 nm silver NP simulations of $C (|\vec{q}_{111}|,|\vec{q}_{200}|, \Delta  )$, $C (|\vec{q}_{111}|,|\vec{q}_{111}|, \Delta  )$, and $C (|\vec{q}_{200}|,|\vec{q}_{200}|, \Delta  )$ D) same as A) but on the interval ($0-2\pi$ ). Despite application of a binary filter,  false correlations still arise due to systematic noises. Further refinement of the data is an ongoing process.
+{\bf Figure 1} A) from top to bottom, 20 nm silver NP simulations of $C (|\vec{q}_{111}|,|\vec{q}_{200}|, \Delta  )$, $C (|\vec{q}_{111}|,|\vec{q}_{111}|, \Delta  )$, and $C (|\vec{q}_{200}|,|\vec{q}_{200}|, \Delta  )$ B) from top to bottom, measurements of $C (|\vec{q}_{111}|,|\vec{q}_{200}|, \Delta  )$, $C (|\vec{q}_{111}|,|\vec{q}_{111}|, \Delta  )$, and $C (|\vec{q}_{200}|,|\vec{q}_{200}|, \Delta  )$.  Vertical lines mark analytical predictions and shading represents 95\% confidence intervals.
 \end{figure}
 
 Here we report on our attempts to resolve (\ref{angular}) at the two brightest silver Bragg rings. Specifically, we calculated $C (|\vec{q}_{111}|,|\vec{q}_{111}|, \Delta  )$, $C (|\vec{q}_{200}|,|\vec{q}_{200}|, \Delta  )$, and $C (|\vec{q}_{111}|,|\vec{q}_{200}|, \Delta  )$. 
 
 Initial attempts to see convergence of the CXS signal were unsuccessful. In addition to the inherent statistical noises described in [1,7], CXS measurement  is very sensitive to systematic noises associated with the experimental conditions \cite{Kam:1981ua}, \textit{e.g.}~detector artifacts. The Pilatus 6M detector is made up of 60 pixel modules separated by 1-2 mm gaps, and each Bragg ring subtends multiple modules. The overall electronic response of each module is slightly different, causing false intensity correlations that dominate any underlying CXS. 
 
-In order to minimize these parasitic correlations, we applied a binary filter to the data. We defined the filter as follows: Let $\{ \vec{q}_{hkl} \}_{m}$ [what is $m$? I am confused...] represent the set of Bragg pixels on detector module $m$ where $1 \leq m \leq 60$. Let $\mu_m$ and $\sigma_m$ represent the average and standard deviation of $n_{s}(\vec{q})$  for all $\vec{q} \in \{ \vec{q}_{hkl} \}_{m} $, respectively. Then for each $\vec{q} \in \{ \vec{q}_{hkl} \}_{m} $, we apply the photon count filter:
+In order to minimize these parasitic correlations, we applied a binary filter to the data. We defined the filter as follows: Let $\{ \vec{q}_{hkl} \}_{m}$ represent the set of Bragg pixels on the $m^{th}$ detector module ($1 \leq m \leq 60$ ) . Let $\mu_m$ and $\sigma_m$ represent the average and standard deviation of $n_{s}(\vec{q})$  for all $\vec{q} \in \{ \vec{q}_{hkl} \}_{m} $, respectively. Then for each $\vec{q} \in \{ \vec{q}_{hkl} \}_{m} $, we apply the photon count filter:
 
 \[  n_{s}(\vec{q} ) = 
  \begin{cases} 

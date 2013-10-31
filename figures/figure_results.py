@@ -11,7 +11,7 @@ cor1_mean = cor1.mean(0)
 cor2_mean = cor2.mean(0)
 cor12_mean = cor12.mean(0)
 
-step = 6
+step = 1
 
 cor1_mean = convolve(cor1_mean, ones( (step,))/step )[step-1:][::step]
 cor2_mean = convolve(cor2_mean, ones( (step,))/step )[step-1:][::step]
@@ -20,8 +20,6 @@ cor12_mean = convolve(cor12_mean, ones( (step,))/step )[step-1:][::step]
 cor1_std = cor1.std(0)
 cor2_std = cor2.std(0)
 cor12_std = cor12.std(0)
-
-# im pretty sure I need a factor of root something here... probs neglig
 
 cor1_std = convolve(cor1_std, ones( (step,))/step )[step-1:][::step]
 cor2_std = convolve(cor2_std, ones( (step,))/step )[step-1:][::step]
@@ -32,21 +30,23 @@ cor2_err = cor2_std / sqrt( cor2.shape[0] )
 cor12_err = cor12_std / sqrt( cor12.shape[0] )
 
 
-figure( 1, figsize=(4.5,7) )
+figure( 1, figsize=(1,5) )
 
-subplot(221)
+subplot(212)
 
 phis = linspace( 0,2*pi,cor1_mean.shape[0] ) 
-offset_1 = 0.0004
+offset_1 = 0.0005
 offset_2 = -0.00005
-offset_12 = 0.00068
+offset_12 = 0.00085
 
 #data means
 color = 'b'
 lw = 2
-plot( phis, cor1_mean + offset_1,lw=lw,color=color)
-plot( phis, cor2_mean+offset_2,lw=lw,color=color)
-plot( phis, cor12_mean+offset_12,lw=lw,color=color)
+ls='d'
+ms=4
+plot( phis, cor1_mean + offset_1,'d',color=color,ms=ms)
+plot( phis, cor2_mean+offset_2,'d',color=color,ms=ms)
+plot( phis, cor12_mean+offset_12,'d',color=color,ms=ms)
 
 # data errors
 alpha = 0.4
@@ -69,12 +69,19 @@ plot(ones(2)*(1.603),linspace(-1,1,2),color=color,ls=ls,lw=lw,alpha=alpha )
 plot(ones(2)*(0.97),linspace(-1,1,2),color=color,ls=ls,lw=lw,alpha=alpha )
 plot(ones(2)*(2.24),linspace(-1,1,2),color=color,ls=ls,lw=lw,alpha=alpha )
 
+peaks = [0.97, 1.248, 1.603, 1.945, 2.224]
+ticks = map( lambda x: str( int( x * 180 / pi)), peaks )
+gca().get_xaxis().set_ticks(peaks)
+gca().get_xaxis().set_ticklabels(ticks)
 xlim(0.86,2.37)
-ylim(-0.00037,0.00105)
+ylim(-0.00037,0.0013)
 gca().get_yaxis().set_ticks([])
-gca().get_xaxis().set_ticks([])
+xlabel(r"$\Delta$ (deg.)", fontsize=18)
 
-subplot(223)
+text(pi*60/180,0.0013-0.0002, 'B', color='r',fontsize=18)
+
+subplot(211)
+
 
 ff = np.load( '/mnt/data/cxs_simulations/corz.npz' )
 c1 = ff['c1']
@@ -103,17 +110,21 @@ plot(ones(2)*(0.97),linspace(-1,1,2),color=color,ls=ls,lw=lw,alpha=alpha )
 plot(ones(2)*(2.24),linspace(-1,1,2),color=color,ls=ls,lw=lw,alpha=alpha )
 
 gca().get_yaxis().set_ticks([])
+gca().get_xaxis().set_ticks([])
 xlim(0.86,2.37)
 ylim(-0.0039,0.032)
 
-peaks = [0.97, 1.248, 1.603, 1.945, 2.224]
-ticks = map( lambda x: str( int( x * 180 / pi)), peaks )
-gca().get_xaxis().set_ticks(peaks)
-gca().get_xaxis().set_ticklabels(ticks)
+text(pi*60/180,0.032-0.005, 'A', color='r',fontsize=18)
+
+#peaks = [0.97, 1.248, 1.603, 1.945, 2.224]
+#ticks = map( lambda x: str( int( x * 180 / pi)), peaks )
+#gca().get_xaxis().set_ticks(peaks)
+#gca().get_xaxis().set_ticklabels(ticks)
 
 xlim(0.86,2.37)
-xlabel(r"$\Delta$ (deg.)", fontsize=18)
+#xlabel(r"$\Delta$ (deg.)", fontsize=18)
 
+"""
 subplot( 222 ) 
 gca().get_yaxis().set_ticks([])
 gca().get_xaxis().set_ticks([])
@@ -140,15 +151,19 @@ legend(['measured','simulated'], prop={'size':11},loc=4)
 subplot( 224)
 
 phis = linspace( 0,2*pi,cor1_mean.shape[0] ) 
-offset_1 = 0.0004
+#offset_1 = 0.0004
+#offset_2 = -0.00005
+#offset_12 = 0.00068
+
+offset_1 = 0.0005
 offset_2 = -0.00005
-offset_12 = 0.00068
+offset_12 = 0.00085
 
 color = 'b'
-lw = 2
-plot( phis, cor1_mean + offset_1,lw=lw,color=color)
-plot( phis, cor2_mean+offset_2,lw=lw,color=color)
-plot( phis, cor12_mean+offset_12,lw=lw,color=color)
+ms = 3.5
+plot( phis, cor1_mean + offset_1,'d',color=color,ms=ms)
+plot( phis, cor2_mean+offset_2,'d',color=color,ms=ms)
+plot( phis, cor12_mean+offset_12,'d',color=color,ms=ms)
 
 # data errors
 alpha = 0.4
@@ -164,13 +179,16 @@ fill_between( phis, cor12_mean+offset_12, cor12_mean - 1.96*cor12_err + offset_1
 #ticks = [str(int( pi/2 * 180 / pi ) ), str( int( ( 0.1 + 6.18 )* 90 / pi ) ) ,  str(int( 6.18 * 180 / pi ))]
 ticks = ["90", "180", "270"]
 gca().get_xaxis().set_ticks(ticks)
-ylim(-0.00037,0.00105)
+ylim(-0.00037,0.0013)
+#ylim(-0.00037,0.00105)
 gca().get_yaxis().set_ticks([])
 gca().get_xaxis().set_ticks([ pi/2, pi, 3*pi/2])
 gca().get_xaxis().set_ticklabels(ticks)
 
 xlim(0.1,2*pi-0.1)
 xlabel(r"$\Delta$ (deg.)", fontsize=18)
+
+"""
 
 
 show()
