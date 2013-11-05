@@ -43,11 +43,11 @@
 \begin{document} 
 \hspace{1cm}{\bf Title:} Observation of correlated x-ray scattering at atomic resolution \hfb
  
-{\bf Authors:} Derek Mendez, Thomas J. Lane, Jongmin Sung,  Cl\`ement Levard, Herschel Watkins, Aina E. Cohen, Michael Soltis, Shirley Sutton, James Spudich, Vijay Pande,  Daniel Ratner, Sebastian Doniach
+{\bf Authors:} Derek Mendez, Thomas J. Lane, Jongmin Sung,  Cl\`ement Levard, Herschel Watkins, Aina Cohen, Michael Soltis, Shirley Sutton, James Spudich, Vijay Pande,  Daniel Ratner, Sebastian Doniach
 
 {\bf Abstract}
 
-Tools to study disordered systems with local structural order, such as proteins in solution, remain limited. Such understanding is essential for \emph{e.g.}~rational drug design. Correlated x-ray scattering (CXS) has recently attracted new interest as a way to leverage next-generation light sources to study such disordered matter. The CXS experiment measures angular correlations of the intensity caused by the scattering of x-rays from an ensemble of identical particles, with disordered orientation and position. Averaging over 15,496 snapshot images obtained by exposing a sample of silver nanoparticles in solution to a micro-focused synchrotron radiation beam, we report an update on experimental efforts to obtain CXS signal from an ensemble in three dimensions. The correlation function was measured at  wide angles corresponding to atomic resolution and matches theoretical predictions. These preliminary results suggest that other CXS experiments on disordered ensembles -- such as proteins in solution -- may be feasible in the future.
+Tools to study disordered systems with local structural order, such as proteins in solution, remain limited. Such understanding is essential for \emph{e.g.}~rational drug design. Correlated x-ray scattering (CXS) has recently attracted new interest as a way to leverage next-generation light sources to study such disordered matter. The CXS experiment measures angular correlations of the intensity caused by the scattering of x-rays from an ensemble of identical particles, with disordered orientation and position. Averaging over 15,496 snapshot images obtained by exposing a sample of silver nanoparticles in solution to a micro-focused synchrotron beam, we report an update on experimental efforts to obtain CXS signal from an ensemble in three dimensions. The correlation function was measured at  wide angles corresponding to atomic resolution and matches theoretical predictions. These preliminary results suggest that other CXS experiments on disordered ensembles -- such as proteins in solution -- may be possible in the future.
 
 
 \section{Introduction}
@@ -62,21 +62,21 @@ By successfully measuring CXS signal from randomly oriented ensembles of silver 
 
 \section{Theory}
 
-We briefly review the portions of \cite{Kam:1977wc} relevant to this paper. Let $S( \bm q,\omega)$ represent the structure factor of an isolated particle in solution, \textit{i.e.}
+We briefly review the portions of \cite{Kam:1977wc} relevant to this manuscript. Let $S( \bm q,\omega)$ represent the structure factor of an isolated particle in solution, \textit{i.e.}
 \be \label{structurefactor}
 S(\bm q,\omega) = \left| \> \sum_{j}^{N_j} f_j (q )e^{i \bm q \cdot  \left( \hat{R}_\omega \cdot \bm r_j\right)  } \right| ^{2}
 \ee
-where $\bm q$ is the scattering momentum transfer vector,  $\bm r_j$ and $f_j (q )$ are the coordinates and form factor of the $j^{th}$ atom in the particle respectively $( 1 \leq j \leq N_{j} )$, $\omega$ is a triple of Euler angles, $\hat{R}_\omega$ is a three-dimensional rotation operator, and the sum is over all $N_j$ atoms in the particle.
+where $\bm q$ is the scattering momentum transfer vector,  $\bm r_j$ and $f_j (q )$ are the coordinates and form factor of the $j^{th}$ atom in the particle respectively $( 1 \leq j \leq N_{j} )$, $\omega$ is a triple of Euler angles, $\hat{R}_\omega$ is a 3-dimensional rotation operator, and the sum is over all $N_j$ atoms in the particle.
 
-Kam showed that if the distribution of particle rotations dictated by $\hat{R}_\omega$ is isotropic, distributed uniformly over $\omega$, then the scattering factor correlation function
+Kam showed that if the distribution of particle rotations dictated by $\hat{R}_\omega$ is isotropic, distributed uniformly over the unit sphere, then the scattering factor correlation function
 \be \label{correlation}
 C(\bm q_1, \bm q_2) = \frac{N}{8 \pi^{2}}\int S( \bm q_{1},\omega ) S( \bm q_{2},\omega ) \, d \omega
 \ee
-may be extracted from a CXS measurement where one repeatedly records snapshots of a $N$-particle solution, with each snapshot representing a unique ensemble of the particles frozen in three-dimensional space. Kam showed (assuming negligible inter-particle scattering interference) that the empirical correlation function averaged over shots would converge to (\ref{correlation}), \textit{i.e.},
+may be extracted from a CXS measurement where one repeatedly records snapshots of a $N$-particle solution, with each snapshot representing a unique ensemble of the particles frozen in 3-dimensional space. Kam showed (assuming negligible inter-particle scattering interference) that the empirical correlation function averaged over shots would converge to (\ref{correlation}), \textit{i.e.},
 \be \label{converge}
 \big \langle   n_s(\bm q_1)  \, n_s(\bm q_2) \big \rangle_s  - \big \langle {n}_s(\bm q_1) \big \rangle_s \, \big \langle {n}_s(\bm q_2) \big \rangle_s   \Rightarrow C(\bm q_1, \bm q_2) 
 \ee
-where $n_{s}(\bm q)$ is the total photons scattered from all particles in snapshot $s$ into a pixel along scattering vector $\bm q$. Neglecting inter-particle scattering interference, $n_{s}(\bm q)$ can be thought of as a probabilistic linear combination of $S(\bm q,\omega)$ for a set of orientations $\{ \omega\}_{s}$.
+where $n_{s}(\bm q)$ is the total photons scattered from all particles in snapshot $s$ into a pixel along scattering vector $\bm q$. Neglecting inter-particle scattering interference, $n_{s}(\bm q)$ can be thought of as a linear combination of $S(\bm q,\omega)$ for a set of orientations $\{ \omega\}_{s}$.
 
 In the special case of an isotropically oriented sample, Kam proved that the absolute orientation of the $\bm q_1, \bm q_2$ scattering pair in the correlation function is irrelevant; the relevant covariates are only the magnitudes $| \bm q_1 | , | \bm q_2 | $ and the angle between the vectors, $\psi$. Thus the correlation function can be written 
 \[
@@ -87,9 +87,9 @@ Experimentally, we build this function by taking angular correlations in the det
 D (q_1,q_2, \Delta  ) = \left \langle \int_{0}^{2\pi}  \Big ( n_s(q_1,\phi) -   \mu_s( q_1) \Big) \Big ( n_s(q_2,\phi) -   \mu_s( q_2) \Big)  \, d\phi  \right \rangle_{s}
 \ee
 
-where $\mu_s( q)$ is the average photon counts at $q$ in snapshot $s$. Assuming randomly oriented particles, negligible inter-particle scattering (wide angles and/or a dilute sample), and a sufficiently large number of snapshots, $D (q_1,q_2, \Delta  )$ will converge to the Kam correlation $C (q_1,q_2, \psi  )$.
+where $\mu_s( q)$ is the average photon counts at $q$ in snapshot $s$. Assuming randomly oriented particles and a sufficiently large numbers of snapshots, $D (q_1,q_2, \Delta  )$ will converge to the Kam correlation $C (q_1,q_2, \psi  )$.
 
-We have computed the expected angular correlation function (\ref{angular}) for the silver NPs studied as a benchmark for our experimental results (Figure 2-B). A silver NP may be represented by a simple model consisting of a face-centered-cubic lattice cutoff by a spherical boundary. The scattering can then be represented by reciprocal lattice vectors cutting the Ewald sphere and giving rise to Bragg peaks. Hence, each snapshot records a series of Bragg rings (henceforth we will only consider scattering vectors which meet the Bragg condition for silver, denoted by a set of Miller indices, $\bm q_{hkl}$). The sub-population of all NP orientations that simultaneously subtend two Bragg peaks on the Ewald sphere give rise to angular correlations. Therefore,  CXS signal appears at values of $\Delta $ corresponding to the geometry of the reciprocal lattice and the angles between reciprocal lattice vectors. For instance, we calculate that $D (q_{111},q_{111}, \Delta  )$ should display strong signal at $\Delta_1 = \arccos[ \frac{-2}{3\cos^{2}\theta} + 1  ]$ and $\Delta_2 = \arccos[ \frac{-4}{3\cos^{2}\theta} + 1  ]$ where $2\theta$ is the standard scattering angle.
+We have computed the expected angular correlation function (\ref{angular}) for the silver NPs studied as a benchmark for our experimental results (Figure 2-A). A silver NP may be represented by a simple model consisting of a face-centered-cubic lattice cutoff by a spherical boundary. The scattering can then be represented by reciprocal lattice vectors cutting the Ewald sphere and giving rise to Bragg peaks. Hence, each snapshot records a series of Bragg rings. (Henceforth we will only consider scattering vectors which meet the Bragg condition for silver, denoted by a set of Miller indices, $\bm q_{hkl}$.) The sub-population of all NP orientations that simultaneously subtend two Bragg peaks on the Ewald sphere give rise to angular correlations. Therefore,  CXS signal appears at values of $\Delta $ corresponding to the geometry of the reciprocal lattice and the angles between reciprocal lattice vectors. For instance, $D (q_{111},q_{111}, \Delta  )$ should display strong signal at $\Delta_1 = \arccos[ \frac{-2}{3\cos^{2}\theta} + 1  ]$ and $\Delta_2 = \arccos[ \frac{-4}{3\cos^{2}\theta} + 1  ]$ where $2\theta$ is the standard scattering angle.
 
 
 
@@ -105,12 +105,12 @@ Theoretical results suggest the CXS signal to noise scales as $\sqrt{N_{s}}$ , b
 \begin{center}
 \includegraphics[ ]{./binary.png}
 \end{center}
-{\bf Figure 1} {\bf A)} Typical measurement of $n_{s}( q_{111},\phi)$, \textit{i.e.} the photon counts around the Bragg ring at $q_{111}$. The horizontal bars show the binary cutoff along the ring for each module. Here, the $q_111$ ring spans 10 modules in total. {\bf B)} Histogram of the intensities in {\bf A} on a log scale of photon numbers. Notice the tail at higher intensities, indicating the presence of large particles. {\bf C)} Result of applying the binary filter to {\bf A}. On average, a binary shot at $q_{111}$ is 10\% ones, 77\% zeros and 13\% masked pixels (masked pixels are ignored in the analysis).  {\bf D)} The average binary intensity from a scan of 500 snapshots. Notice how some of the regions are biased, indicating intra-module pixel variations. {\bf E)} Typical snapshot showing the Bragg rings at $q_{111}$ and $q_{200}$. Low/high intensities shown in white/black. \end{figure}
+{\bf Figure 1} {\bf A)} Typical measurement of $n_{s}( q_{111},\phi)$, i.e. the photon counts around the Bragg ring at $q_{111}$. The horizontal bars show the binary cutoff along the ring for each module. {\bf B)} Histogram of the intensities in {\bf A} on a log scale of photon numbers. Notice the tail at higher intensities, indicating the presence of large particles. {\bf C)} Result of applying the binary filter to {\bf A}. A binary shot at $q_{111}$ is, on average, 10\% ones, 77\% zeros and 13\% masked pixels (masked pixels are ignored in the analysis).  {\bf D)} The average binary intensity from a scan of 500 snapshots. Notice how some of the regions are biased, indicating intra-module pixel variations. {\bf E)} Typical snapshot showing the Bragg rings at $q_{111}$ and $q_{200}$. Low/high intensities shown in white/black. \end{figure}
 
 
-Data from 15,496 x-ray diffraction images of silver NP solution were collected and analyzed at the micro-focus crystallography beamline (12-2) at SSRL. We prepared a sample containing an estimated $10^{9}$  20 nm NPs per snapshot in the illuminated volume, but we observed significant numbers of NPs that were larger. Samples were loaded and oriented in the X-ray beam using the Stanford Automated Mounting System (SAM) [21], controllable from the experimental hutch. Using a liquid nitrogen-cooled double crystal monochromator we tuned the beam energy to 17 keV. The beam was focused down to about $20 \times 50 \,\mu$m$^2$ using Rh coated Kirkpatrick-Baez mirrors and had a flux of $2\cdot 10^{12}$ photons per second. Snapshots were recorded on a Dectris Pilatus 6M photon counting detector. 
+Data from 15,496 x-ray diffraction images of silver NP solution were collected and analyzed at the micro-focus crystallography beamline (12-2) at SSRL. We prepared a sample containing an estimated $10^{9}$  20 nm NPs per snapshot in the illuminated volume, but we observed significant numbers of NPs that were larger. Samples were loaded and oriented in the X-ray beam using the Stanford Automated Mounting System (SAM), controllable from the experimental hutch. Using a liquid nitrogen-cooled double crystal monochromator we tuned the beam energy to 17 keV. The beam was focused down to about $20 \times 50$ $\mu$m$^2$ using Rh coated Kirkpatrick-Baez mirrors and had a flux of $2\cdot 10^{12}$ photons per second. Snapshots were recorded on a Dectris Pilatus 6M photon counting detector. 
 
-To successfully measure a correlation function via the scheme (\ref{converge}), the sample must be frozen in time or space. Any random motion due to diffusion of particles will reduce the scattering correlation, which is a function of the particle structure and orientation (eq.~\ref{structurefactor}). To prevent diffusion during the long exposure times (order 1 second) necessary to scatter a sufficient number of photons to measure a correlation signal at a synchrotron, we cooled the sample using an Oxford Instruments Cryojet, ensuring that the particles remained immobilized during each exposure. The silver NPs, coated in PVP, were synthesized following a protocol described elsewhere \cite{Levard:2011bx}. In order to prevent the formation of solvent crystals at the low temperature, the NPs were concentrated and suspended in 80\% glycerol and 3\% agarose with a final concentration of 350 mg/ml. The solutions were held in kapton capillaries (500 and 600 $\mu$m inner and outer diameter, respectively) and flash frozen in liquid nitrogen. Kapton and glycerol scatter into relatively lower angles, and we did not observe corruption of our silver NP signal with scattering from the kapton or glycerol. Samples were prepared a day early and stored in a liquid nitrogen bath. Further, no changes in the diffraction images were observed during the course of a single snapshot exposure, indicating the sample did not undergo significant diffusion or radiation damage.
+To successfully measure a correlation function via the scheme (\ref{converge}), the sample must be frozen in time and space. Any random motion due to diffusion of particles will reduce the scattering correlation, which is a function of the particle structure and orientation (\ref{structurefactor}). To prevent diffusion during the long exposure times (order 1 second) necessary to scatter a sufficient number of photons to measure a correlation signal at a synchrotron, we cooled the sample using a 100 Kelvin nitrogen cryo jet, ensuring that the particles remained immobilized during each exposure. The silver NPs, coated in PVP, were synthesized following a protocol described in reference \cite{Levard:2011bx}. In order to prevent the formation of solvent crystals at the low temperature, the NPs were concentrated and suspended in 80\% glycerol and 3\% agarose with a final concentration of 350 mg/ml. The solutions were held in kapton capillaries (500 and 600 $\mu$m inner and outer diameter, respectively) and flash frozen in liquid nitrogen. Kapton and glycerol scatter into relatively low angles, and we did not observe corruption of our silver NP signal with scattering from the kapton or glycerol. Samples were prepared a day early and stored in a liquid nitrogen bath. Further, no changes in the diffraction images were observed during the course of a single snapshot exposure, indicating the sample did not undergo significant diffusion or radiation damage.
 
 Our goal was to record as many snapshots as possible, each one representing a different ensemble of particle orientations frozen in time. The sample holder was equipped to automatically rotate the capillary 150 degrees about its longitudinal axis, perpendicular to the beam. Photon counts were read out and reset every 0.7 second as the capillary rotated 0.3 degrees under continuous beam irradiation, yielding 500 shots per 150 degree rotational scan. This was deemed an optimal timing to simultaneously maximize signal and minimize damage and heating. Every 500 shots, between scans, the capillary was moved longitudinally so as to always probe different regions of the sample.
 
@@ -124,14 +124,14 @@ A bicubic interpolation algorithm was used to convert the cartesian pixel lattic
 \begin{center}
 \includegraphics[ ]{./results.png}
 \end{center}
-{\bf Figure 2} {\bf A)} From top to bottom, 20 nm silver NP simulations of $D (q_{111},q_{200}, \Delta  )$, $D (q_{111},q_{111}, \Delta  )$, and $D (q_{200},q_{200}, \Delta  )$. {\bf B)} Corresponding measurements of the correlations plotted in {\bf A}. Vertical lines mark analytical predictions. We truncated the angular range to highlight the correlation peaks. The entire angular plot is mirror-symmetric about $\Delta = \pi$. Regions not shown contain artifacts similar to those on the figure, with nothing greater in magnitude than the CXS peaks. {\bf C)} Simulation(dashed line) and measurement (diamond marker) of a correlation peak width. The simulation was for 20 nm particles. Peak width scales inversely with particle size, hence we expect the measured CXS resulted from particles larger than 20 nm. Shading represents 95\% confidence intervals on the measurement.
+{\bf Figure 2} {\bf A)} From top to bottom, 20 nm silver NP simulations of $D (q_{111},q_{200}, \Delta  )$, $D (q_{111},q_{111}, \Delta  )$, and $D (q_{200},q_{200}, \Delta  )$. {\bf B)} Corresponding measurements of the correlations plotted in {\bf A}. Vertical lines mark analytical predictions. We truncated the angular range to highlight the correlation peaks. The entire angular plot is symmetric about $\Delta = \pi$. Regions not shown contain artifacts similar to those on the figure, with nothing greater in magnitude than the CXS peaks. {\bf C)} Width of a correlation peak. The simulation was for 20 nm particles. Peak width scales inversely with particle size, hence we expect the measured CXS resulted from particles larger than 20 nm. Shading represents 95\% confidence intervals on the measurement.
 \end{figure}
 
 Here we report on our attempts to resolve (\ref{angular}) at the two brightest silver Bragg rings. Specifically, we calculated $D (q_{111},q_{111}, \Delta  )$, $D (q_{200},q_{200}, \Delta  )$, and $D (q_{111},q_{200}, \Delta  )$. 
 
 Convergence of the CXS signal is complicated by the inherent statistical noises described in [1,7], and CXS measurement is sensitive to systematic noises associated with the experimental conditions \cite{Kam:1981ua}, \textit{e.g.}~detector artifacts. The Pilatus 6M detector is made up of 60 pixel modules separated by 1-2 mm gaps, and each Bragg ring subtends multiple modules. The overall electronic response of each module is slightly different, causing systemic anisotropies which lead to detector intensity correlations that dominate the sample CXS. 
 
-To minimize the background correlations, we apply a binary filter to the data (Figure 1). We define the filter as follows: Let $\{ \bm q_{hkl} \}_{m}$ represent the set of Bragg pixels on the $m^{th}$ detector module ($1 \leq m \leq 60$). Let $\mu_m$ and $\sigma_m$ represent the average and standard deviation of $n_{s}(\bm q)$  for all $\bm q \in \{ \bm q_{hkl} \}_{m} $, respectively. Then for each $\bm q \in \{ \bm q_{hkl} \}_{m} $, we apply the photon count filter:
+To minimize the background correlations, we apply a binary filter to the data (Figure 1). We define a the filter as follows: Let $\{ \bm q_{hkl} \}_{m}$ represent the set of Bragg pixels on the $m^{th}$ detector module ($1 \leq m \leq 60$). Let $\mu_m$ and $\sigma_m$ represent the average and standard deviation of $n_{s}(\bm q)$  for all $\bm q \in \{ \bm q_{hkl} \}_{m} $, respectively. Then for each $\bm q \in \{ \bm q_{hkl} \}_{m} $, we apply the photon count filter:
 
 \[  n_{s}(\bm q ) = 
  \begin{cases} 
@@ -140,19 +140,20 @@ To minimize the background correlations, we apply a binary filter to the data (F
  \end{cases} 
  \]
 
-\textit{i.e.}~per module, all Bragg pixels less than one standard deviation above the mean are set to zero and the rest are set to unity. The binary threshold here was chosen arbitrarily, but one might select a different threshold in order to maximize signal. The binary filter is a simple method for emphasizing the local variations from the sample compared to the background fluctuations of the detector; placing each detector module on the same scale removes correlations between modules.  After applying the filter and calculating (\ref{angular}), the resulting correlations reveal peaks that match the simulations and analytical predictions (Figure 2). Despite the filtering, variations remain within each module which bias the binary filter selection and lead to the low frequency background correlations seen in Figure 2-A. The binary filter is an intermediate stage in our on-going analysis; it provides a stepping stone to better data refinement techniques and CXS extraction.
+\textit{i.e.}~all pixels less than one standard deviation above the mean are set to zero and the rest are set to unity. The binary filter is a simple method for emphasizing the local variations from the sample compared to the background fluctuations of the detector; placing each detector module on the same scale removes correlations between modules.  After applying the filter and calculating (\ref{angular}), the resulting correlations reveal peaks that match the simulations and analytical predictions (Figure 2). Despite the filtering, variations remain within each module which bias the binary filter selection and lead to the low frequency background correlations seen in Figure 2-B. The binary filter is an intermediate stage in our on-going analysis; it provides a stepping stone to better data refinement techniques and CXS extraction.
 
-As mentioned in the Methods section, we infer from the width of the Bragg rings that the majority of our sample consists of 20 nm silver NPs ($\sim10^9$ per snapshot). From tabulated coherent atomic cross sections \cite{Henke:1993wx} we estimate that each 20nm silver NP scattered roughly 1.6 photons per 0.7 sec exposure. We can further estimate that roughly 8.3\% of these NPs scatter into the Bragg ring at $q_{111}$ on the detector. This is done by tracing out volumes of rotation of the reciprocal lattice points whose diameter is given by the Scherrer equation [8], and then determining which fraction of that volume intersects the Ewald sphere. These estimates are in line with the average photon counts per pixel per snapshot in the $q_{111}$ Bragg ring, $\sim 4 \times 10^4$. Many of the snapshots had Bragg pixels with counts $\sim 8 \times 10^4$, much greater than one would expect given Poisson photon statistics. Thus we conclude that our sample included a range of larger particles which scatter more photons. To put a lower bound on the size of these particles we again turn to the Scherrer equation, this time relating the width of the correlation peak to the particle size (Figure 2-C). The width of the measured correlation peak is in line with estimates for 50 nm particles. Thus, we conclude that the correlations we are measuring are most likely generated by scattering off of thousands of $\ge$50 nm particles per shot. We emphasize that this is an estimated lower bound; effects not included in the Scherrer equation (e.g. Brownian motion) can cause broadening of a Bragg peak. Of all 50 nm silver NP orientations, we estimate that roughly 0.19\%, 0.06\% will simultaneously subtend two Bragg peaks on the detector into $q_{111}$, $q_{200}$ respectively, and 0.15\% will simultaneously subtend one Bragg peak into each of $q_{111}$, $q_{200}$.
+As mentioned in the Methods section, we infer from the width of the Bragg rings that the majority of our sample consisted of $10^9$ 20 nm silver NPs. From tabulated coherent atomic cross sections \cite{Henke:1993wx} we estimated that each 20nm silver NP scattered roughly 1.6 photons per 0.7 sec exposure. We can further estimate that roughly 8.3\% of these NPs scatter into the Bragg ring at $q_{111}$ on the detector. The percentages are found by tracing out volumes of rotation of the reciprocal lattice points whose diameter is given by the Scherrer equation [8], and then determining which fraction of that volume intersects the Ewald sphere. These estimates are in line with the average photon counts per pixel per snapshot that we observed in the $q_{111}$ Bragg ring, $\sim 4 \cdot10^4$. Many of the snapshots had Bragg peaks with counts $\sim 8 \cdot10^4$, much greater than one would expect given Poisson photon statistics. Thus we conclude that our sample included larger particles which scatter more photons. To put a lower bound on the size of these particles we again turned to the Scherrer equation, this time relating the width of the correlation peak to the particle size (Figure 2-C). We simulated (\ref{angular}) for 20 nm NPs and compared the widths of the simulated and measured correlation peaks. The width of the measured correlation peak is in line with estimates for 50 nm particles. Thus, we concluded that the correlations we are measuring are most likely generated by scattering off of thousands of $\ge$50 nm particles per shot. We emphasize that this is an estimated lower bound; effects not included in the Scherrer equation (e.g. Brownian motion) can cause broadening of a Bragg peak. We estimate that roughly 0.2\% of 50 nm silver NP orientations will simultaneously subtend 2 Bragg peaks on the detector at either $q_{111}$ or $q_{200}$.
 
-We note that convergence of the correlations was not limited by the large number of randomly oriented particles in the beam.  At present, the main impediment to accurate measurements of CXS arises from anisotropy artifacts induced by the detector system.  We have been able to partially overcome background correlations by nonlinear binary filtering and are continuing data processing with more sophisticated methods.
+We note that convergence of the correlations were not limited by the number of particles in the beam.  At present, the main impediment to accurate measurements of CXS arises from anisotropy artifacts induced by the detector system.  We have been able to partially overcome background correlations by nonlinear binary filtering and are continuing data processing with more sophisticated methods.
 
 \section{Conclusion}
 
-Kam's original results \cite{Kam:1977wc} show that (\ref{correlation}), which may be directly calculated from the structure factors of the particle (\ref{structurefactor}), can be derived from measurement of an ensemble of particles. Hence accurate measurement of CXS in the 3-dimensional $\{q_1,q_2,\Delta\}$ space can lead to constraints on a sample's electron density model, thus giving a route to iterative refinement \cite{Schroder:2010cm}.
+Kam's original results \cite{Kam:1977wc} show that (\ref{correlation}), which may be directly calculated from the structure factors of the particle (\ref{structurefactor}), can be derived from measurement of an ensemble of particles. Hence accurate measurement of CXS in the 3-dimensional $\{q_1,q_2,\Delta\}$ space can lead to constraints on a sample's electron density model, thus giving a route to iterative refinement \cite{Schroder:2010cm}. 
 
-Our preliminary results reveal atomic scale information of the internal structure of a particle from a bulk sample containing many identical  but randomly oriented particles. These results on silver NPs suggest that it should be feasible to obtain atomic scale constraints on models of particles with unknown structure, provided one can effectively correct for background correlations. With the much brighter pulses from x-ray free electron lasers it may be possible to extend the results to more complex biomolecules \cite{Neutze:2000ih, Spence:2012eo}. 
+Our preliminary results reveal atomic scale information of the internal structure of a particle from a bulk sample containing many identical  but randomly oriented particles. These results on silver NPs suggest that it should be feasible to obtain atomic scale constraints on models of particles with unknown structures, provided one can effectively correct for background correlations. With the much brighter pulses from x-ray free electron lasers it may be possible to extend the results to more complex biomolecules \cite{Neutze:2000ih, Spence:2012eo}. 
 
-\bibliographystyle{ieeetr}
+
+\bibliographystyle{plain}
 %\bibliography{papers2.bib}
 %
 %
@@ -160,127 +161,143 @@ Our preliminary results reveal atomic scale information of the internal structur
 \begin{thebibliography}{10}
 
 \bibitem{Kam:1977wc}
-Z.~Kam, ``{Determination of macromolecular structure in solution by spatial
-  correlation of scattering fluctuations},'' {\em Macromolecules}, vol.~10,
-  no.~5, pp.~927--934, 1977.
-
-\bibitem{Saldin:2011ch}
-D.~Saldin, H.~Poon, M.~Bogan, S.~Marchesini, D.~Shapiro, R.~Kirian,
-  U.~Weierstall, and J.~Spence, ``{New Light on Disordered Ensembles: Ab Initio
-  Structure Determination of One Particle from Scattering Fluctuations of Many
-  Copies},'' {\em Phys. Rev. Lett.}, vol.~106, p.~115501, Mar. 2011.
-
-\bibitem{Kam:1981ua}
-Z.~Kam, M.~H. Koch, and J.~Bordas, ``{Fluctuation x-ray scattering from
-  biological particles in frozen solution by using synchrotron radiation.},''
-  {\em Proceedings of the National Academy of Sciences}, vol.~78,
-  pp.~3559--3562, June 1981.
-
-\bibitem{Wochner:2009ia}
-P.~Wochner, C.~Gutt, T.~Autenrieth, T.~Demmer, V.~Bugaev, A.~D. Ortiz, A.~Duri,
-  F.~Zontone, G.~Gr{\"u}bel, and H.~Dosch, ``{X-ray cross correlation analysis
-  uncovers hidden local symmetries in disordered matter.},'' {\em P Natl Acad
-  Sci Usa}, vol.~106, pp.~11511--11514, July 2009.
-
-\bibitem{Kam:1985tz}
-Z.~Kam and I.~Gafni, ``{Three-dimensional reconstruction of the shape of human
-  wart virus using spatial correlations.},'' {\em Ultramicroscopy}, vol.~17,
-  no.~3, pp.~251--262, 1985.
-
-\bibitem{Starodub:1fy}
-D.~Starodub, A.~Aquila, S.~Bajt, M.~Barthelmess, A.~Barty, C.~Bostedt, J.~D.
-  Bozek, N.~Coppola, R.~B. Doak, S.~W. Epp, B.~Erk, L.~Foucar, L.~Gumprecht,
-  C.~Y. Hampton, A.~Hartmann, R.~Hartmann, P.~Holl, S.~Kassemeyer, N.~Kimmel,
-  H.~Laksmono, M.~Liang, N.~D. Loh, L.~Lomb, A.~V. Martin, K.~Nass, C.~Reich,
-  D.~Rolles, B.~Rudek, A.~Rudenko, J.~Schulz, R.~L. Shoeman, R.~G. Sierra,
-  H.~Soltau, J.~Steinbrener, F.~Stellato, S.~Stern, G.~Weidenspointner,
-  M.~Frank, J.~Ullrich, L.~S.~u. der, I.~Schlichting, H.~N. Chapman, J.~C.~H.
-  Spence, and M.~J. Bogan, ``{Single-particle structure determination by
-  correlations of snapshot X-ray diffraction patterns},'' {\em Nature
-  Communications}, vol.~3, pp.~1276--7, 1.
-
-\bibitem{Elser:2011ez}
-V.~Elser, ``{Strategies for processing diffraction data from randomly oriented
-  particles},'' {\em Ultramicroscopy}, vol.~111, pp.~788--792, June 2011.
-
-\bibitem{Liu:2013dv}
-H.~Liu, B.~K. Poon, D.~K. Saldin, J.~C.~H. Spence, and P.~H. Zwart,
-  ``{Three-dimensional single-particle imaging using angular correlations from
-  X-ray laser data},'' {\em Acta Crystallogr A Found Crystallogr}, vol.~69,
-  pp.~365--373, May 2013.
+Z~Kam.
+\newblock {Determination of macromolecular structure in solution by spatial
+  correlation of scattering fluctuations}.
+\newblock {\em Macromolecules}, 10(5):927--934, 1977.
 
 \bibitem{Chen:2013io}
-G.~Chen, P.~H. Zwart, and D.~Li, ``{Component Particle Structure in
-  Heterogeneous Disordered Ensembles Extracted from High-Throughput Fluctuation
-  X-Ray Scattering},'' {\em Phys. Rev. Lett.}, vol.~110, p.~195501, May 2013.
+Gang Chen, Peter~H Zwart, and Dongsheng Li.
+\newblock {Component Particle Structure in Heterogeneous Disordered Ensembles
+  Extracted from High-Throughput Fluctuation X-Ray Scattering}.
+\newblock {\em Phys. Rev. Lett.}, 110(19):195501, May 2013.
 
-\bibitem{Saldin:2009jj}
-D.~K. Saldin, V.~L. Shneerson, R.~Fung, and A.~Ourmazd, ``{Structure of
-  isolated biomolecules obtained from ultrashort x-ray pulses: exploiting the
-  symmetry of random orientations},'' {\em J. Phys.: Condens. Matter}, vol.~21,
-  p.~134014, Mar. 2009.
-
-\bibitem{Saldin:2010bx}
-D.~K. Saldin, H.~C. Poon, V.~L. Shneerson, M.~Howells, H.~N. Chapman, R.~A.
-  Kirian, K.~E. Schmidt, and J.~C.~H. Spence, ``{Beyond small-angle x-ray
-  scattering: Exploiting angular correlations},'' {\em Phys. Rev. B}, vol.~81,
-  p.~174105, May 2010.
-
-\bibitem{Poon:2013ia}
-H.~C. Poon, P.~Schwander, M.~Uddin, and D.~K. Saldin, ``{Fiber Diffraction
-  without Fibers},'' {\em Phys. Rev. Lett.}, vol.~110, p.~265505, June 2013.
-
-\bibitem{Kurta:2012cb}
-R.~P. Kurta, M.~Altarelli, E.~Weckert, and I.~A. Vartanyants, ``{X-ray
-  cross-correlation analysis applied to disordered two-dimensional systems},''
-  {\em arXiv}, Feb. 2012.
-
-\bibitem{Kurta:2013to}
-R.~P. Kurta, M.~Altarelli, and I.~A. Vartanyants, ``{X-ray cross-correlation
-  analysis of disordered systems: potentials and limitations},'' {\em arXiv},
-  Feb. 2013.
-
-\bibitem{Kirian:2011bq}
-R.~A. Kirian, K.~E. Schmidt, X.~Wang, R.~B. Doak, and J.~C.~H. Spence,
-  ``{Signal, noise, and resolution in correlated fluctuations from snapshot
-  small-angle x-ray scattering},'' {\em Phys. Rev. E}, vol.~84, p.~011921, July
-  2011.
-
-\bibitem{Levard:2011bx}
-C.~Levard, B.~C. Reinsch, F.~M. Michel, C.~Oumahi, G.~V. Lowry, and G.~E.
-  Brown, Jr., ``{Sulfidation Processes of PVP-Coated Silver Nanoparticles in
-  Aqueous Solution: Impact on Dissolution Rate},'' {\em Environ. Sci.
-  Technol.}, vol.~45, pp.~5260--5266, June 2011.
+\bibitem{Elser:2011ez}
+Veit Elser.
+\newblock {Strategies for processing diffraction data from randomly oriented
+  particles}.
+\newblock {\em Ultramicroscopy}, 111(7):788--792, June 2011.
 
 \bibitem{Henke:1993wx}
-B.~L. Henke, E.~M. Gullikson, and J.~C. Davis, ``{X-Ray Interactions:
-  Photoabsorption, Scattering, Transmission, and Reflection at E= 50-30,000 eV,
-  Z= 1-92},'' {\em Atomic data and nuclear data tables}, 1993.
+B~L Henke, E~M Gullikson, and J~C Davis.
+\newblock {X-Ray Interactions: Photoabsorption, Scattering, Transmission, and
+  Reflection at E= 50-30,000 eV, Z= 1-92}.
+\newblock {\em Atomic data and nuclear data tables}, 1993.
 
-\bibitem{Schroder:2010cm}
-G.~F. Schr{\"o}der, M.~Levitt, and A.~T. Brunger, ``{Super-resolution
-  biomolecular crystallography with low-resolution data},'' {\em Nature},
-  vol.~464, pp.~1218--1222, Apr. 2010.
+
+
+\bibitem{Kam:1985tz}
+Z~Kam and I~Gafni.
+\newblock {Three-dimensional reconstruction of the shape of human wart virus
+  using spatial correlations.}
+\newblock {\em Ultramicroscopy}, 17(3):251--262, 1985.
+
+\bibitem{Kam:1981ua}
+Z~Kam, M~H Koch, and J~Bordas.
+\newblock {Fluctuation x-ray scattering from biological particles in frozen
+  solution by using synchrotron radiation.}
+\newblock {\em Proceedings of the National Academy of Sciences},
+  78(6):3559--3562, June 1981.
+
+\bibitem{Kirian:2011bq}
+Richard~A Kirian, Kevin~E Schmidt, Xiaoyu Wang, R~Bruce Doak, and John C~H
+  Spence.
+\newblock {Signal, noise, and resolution in correlated fluctuations from
+  snapshot small-angle x-ray scattering}.
+\newblock {\em Phys. Rev. E}, 84(1):011921, July 2011.
+
+\bibitem{Kurta:2013to}
+R~P Kurta, M~Altarelli, and I~A Vartanyants.
+\newblock {X-ray cross-correlation analysis of disordered systems: potentials
+  and limitations}.
+\newblock {\em arXiv}, February 2013.
+
+\bibitem{Kurta:2012cb}
+R~P Kurta, M~Altarelli, E~Weckert, and I~A Vartanyants.
+\newblock {X-ray cross-correlation analysis applied to disordered
+  two-dimensional systems}.
+\newblock {\em arXiv}, February 2012.
+
+\bibitem{Levard:2011bx}
+Cl{\'e}ment Levard, Brian~C Reinsch, F~Marc Michel, Camella Oumahi, Gregory~V
+  Lowry, and Gordon~E Brown, Jr.
+\newblock {Sulfidation Processes of PVP-Coated Silver Nanoparticles in Aqueous
+  Solution: Impact on Dissolution Rate}.
+\newblock {\em Environ. Sci. Technol.}, 45(12):5260--5266, June 2011.
+
+\bibitem{Liu:2013dv}
+Haiguang Liu, Billy~K Poon, Dilano~K Saldin, John C~H Spence, and Peter~H
+  Zwart.
+\newblock {Three-dimensional single-particle imaging using angular correlations
+  from X-ray laser data}.
+\newblock {\em Acta Crystallogr A Found Crystallogr}, 69(4):365--373, May 2013.
 
 \bibitem{Neutze:2000ih}
-R.~Neutze, R.~Wouts, D.~van~der Spoel, E.~Weckert, and J.~Hajdu, ``{Potential
-  for biomolecular imaging with femtosecond X-ray pulses.},'' {\em Nature},
-  vol.~406, pp.~752--757, Aug. 2000.
+R~Neutze, R~Wouts, D~van~der Spoel, E~Weckert, and J~Hajdu.
+\newblock {Potential for biomolecular imaging with femtosecond X-ray pulses.}
+\newblock {\em Nature}, 406(6797):752--757, August 2000.
+
+\bibitem{Poon:2013ia}
+H~C Poon, P~Schwander, M~Uddin, and D~K Saldin.
+\newblock {Fiber Diffraction without Fibers}.
+\newblock {\em Phys. Rev. Lett.}, 110(26):265505, June 2013.
+
+\bibitem{Saldin:2011ch}
+D~Saldin, H~Poon, M~Bogan, S~Marchesini, D~Shapiro, R~Kirian, U~Weierstall, and
+  J~Spence.
+\newblock {New Light on Disordered Ensembles: Ab Initio Structure Determination
+  of One Particle from Scattering Fluctuations of Many Copies}.
+\newblock {\em Phys. Rev. Lett.}, 106(11):115501, March 2011.
+
+\bibitem{Saldin:2010bx}
+D~K Saldin, H~C Poon, V~L Shneerson, M~Howells, H~N Chapman, R~A Kirian, K~E
+  Schmidt, and J~C~H Spence.
+\newblock {Beyond small-angle x-ray scattering: Exploiting angular
+  correlations}.
+\newblock {\em Phys. Rev. B}, 81(17):174105, May 2010.
+
+\bibitem{Saldin:2009jj}
+D~K Saldin, V~L Shneerson, R~Fung, and A~Ourmazd.
+\newblock {Structure of isolated biomolecules obtained from ultrashort x-ray
+  pulses: exploiting the symmetry of random orientations}.
+\newblock {\em J. Phys.: Condens. Matter}, 21(13):134014, March 2009.
+
+\bibitem{Schroder:2010cm}
+Gunnar~F Schr{\"o}der, Michael Levitt, and Axel~T Brunger.
+\newblock {Super-resolution biomolecular crystallography with low-resolution
+  data}.
+\newblock {\em Nature}, 464(7292):1218--1222, April 2010.
 
 \bibitem{Spence:2012eo}
-J.~C.~H. Spence, U.~Weierstall, and H.~N. Chapman, ``{X-ray lasers for
-  structural and dynamic biology},'' {\em Rep. Prog. Phys.}, vol.~75,
-  p.~102601, Sept. 2012.
+J~C~H Spence, U~Weierstall, and H~N Chapman.
+\newblock {X-ray lasers for structural and dynamic biology}.
+\newblock {\em Rep. Prog. Phys.}, 75(10):102601, September 2012.
+
+\bibitem{Starodub:1fy}
+D~Starodub, A~Aquila, S~Bajt, M~Barthelmess, A~Barty, C~Bostedt, J~D Bozek,
+  N~Coppola, R~B Doak, S~W Epp, B~Erk, L~Foucar, L~Gumprecht, C~Y Hampton,
+  A~Hartmann, R~Hartmann, P~Holl, S~Kassemeyer, N~Kimmel, H~Laksmono, M~Liang,
+  N~D Loh, L~Lomb, A~V Martin, K~Nass, C~Reich, D~Rolles, B~Rudek, A~Rudenko,
+  J~Schulz, R~L Shoeman, R~G Sierra, H~Soltau, J~Steinbrener, F~Stellato,
+  S~Stern, G~Weidenspointner, M~Frank, J~Ullrich, L~Str~uuml der,
+  I~Schlichting, H~N Chapman, J~C~H Spence, and M~J Bogan.
+\newblock {Single-particle structure determination by correlations of snapshot
+  X-ray diffraction patterns}.
+\newblock {\em Nature Communications}, 3:1276--7, 1.
+
+\bibitem{Wochner:2009ia}
+Peter Wochner, Christian Gutt, Tina Autenrieth, Thomas Demmer, Volodymyr
+  Bugaev, Alejandro~D{\'\i}az Ortiz, Agn{\`e}s Duri, Federico Zontone, Gerhard
+  Gr{\"u}bel, and Helmut Dosch.
+\newblock {X-ray cross correlation analysis uncovers hidden local symmetries in
+  disordered matter.}
+\newblock {\em P Natl Acad Sci Usa}, 106(28):11511--11514, July 2009.
 
 \end{thebibliography}
-
-
 
 %
 %
 % new refs to be added
-[21] A.E. Cohen, P.J. Ellis, M.D. Miller, A.M. Deacon, and R.P. Phizackerley, ÒAn Automated System to Mount Cryo-cooled Protein Crystals on a Synchrotron Beam Line, using Compact Sample Cassettes and a Small-scale Robot,Ó J. Appl. Cryst., 35, 720-726 (2002).
-
 \end{document}
 
 
