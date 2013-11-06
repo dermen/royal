@@ -1,0 +1,127 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem{Kam:1977wc}
+Kam, Z., 1977 {Determination of macromolecular structure in solution by spatial
+  correlation of scattering fluctuations}.
+\newblock \emph{Macromolecules} \textbf{10}, 927--934.
+
+\bibitem{Saldin:2011ch}
+Saldin, D., Poon, H., Bogan, M., Marchesini, S., Shapiro, D., Kirian, R.,
+  Weierstall, U. \& Spence, J., 2011 {New Light on Disordered Ensembles: Ab
+  Initio Structure Determination of One Particle from Scattering Fluctuations
+  of Many Copies}.
+\newblock \emph{Phys. Rev. Lett.} \textbf{106}, 115501.
+
+\bibitem{Kam:1981ua}
+Kam, Z., Koch, M.~H. \& Bordas, J., 1981 {Fluctuation x-ray scattering from
+  biological particles in frozen solution by using synchrotron radiation.}
+\newblock \emph{Proceedings of the National Academy of Sciences} \textbf{78},
+  3559--3562.
+
+\bibitem{Wochner:2009ia}
+Wochner, P., Gutt, C., Autenrieth, T., Demmer, T., Bugaev, V., Ortiz, A.~D.,
+  Duri, A., Zontone, F., Gr{\"u}bel, G. \& Dosch, H., 2009 {X-ray cross
+  correlation analysis uncovers hidden local symmetries in disordered matter.}
+\newblock \emph{P Natl Acad Sci Usa} \textbf{106}, 11511--11514.
+
+\bibitem{Kam:1985tz}
+Kam, Z. \& Gafni, I., 1985 {Three-dimensional reconstruction of the shape of
+  human wart virus using spatial correlations.}
+\newblock \emph{Ultramicroscopy} \textbf{17}, 251--262.
+
+\bibitem{Starodub:1fy}
+Starodub, D., Aquila, A., Bajt, S., Barthelmess, M., Barty, A., Bostedt, C.,
+  Bozek, J.~D., Coppola, N., Doak, R.~B., Epp, S.~W. \emph{et~al.}, 1
+  {Single-particle structure determination by correlations of snapshot X-ray
+  diffraction patterns}.
+\newblock \emph{Nature Communications} \textbf{3}, 1276--7.
+
+\bibitem{Elser:2011ez}
+Elser, V., 2011 {Strategies for processing diffraction data from randomly
+  oriented particles}.
+\newblock \emph{Ultramicroscopy} \textbf{111}, 788--792.
+
+\bibitem{Liu:2013dv}
+Liu, H., Poon, B.~K., Saldin, D.~K., Spence, J. C.~H. \& Zwart, P.~H., 2013
+  {Three-dimensional single-particle imaging using angular correlations from
+  X-ray laser data}.
+\newblock \emph{Acta Crystallogr A Found Crystallogr} \textbf{69}, 365--373.
+
+\bibitem{Chen:2013io}
+Chen, G., Zwart, P.~H. \& Li, D., 2013 {Component Particle Structure in
+  Heterogeneous Disordered Ensembles Extracted from High-Throughput Fluctuation
+  X-Ray Scattering}.
+\newblock \emph{Phys. Rev. Lett.} \textbf{110}, 195501.
+
+\bibitem{Saldin:2009jj}
+Saldin, D.~K., Shneerson, V.~L., Fung, R. \& Ourmazd, A., 2009 {Structure of
+  isolated biomolecules obtained from ultrashort x-ray pulses: exploiting the
+  symmetry of random orientations}.
+\newblock \emph{J. Phys.: Condens. Matter} \textbf{21}, 134014.
+
+\bibitem{Saldin:2010bx}
+Saldin, D.~K., Poon, H.~C., Shneerson, V.~L., Howells, M., Chapman, H.~N.,
+  Kirian, R.~A., Schmidt, K.~E. \& Spence, J. C.~H., 2010 {Beyond small-angle
+  x-ray scattering: Exploiting angular correlations}.
+\newblock \emph{Phys. Rev. B} \textbf{81}, 174105.
+
+\bibitem{Poon:2013ia}
+Poon, H.~C., Schwander, P., Uddin, M. \& Saldin, D.~K., 2013 {Fiber Diffraction
+  without Fibers}.
+\newblock \emph{Phys. Rev. Lett.} \textbf{110}, 265505.
+
+\bibitem{Kurta:2012cb}
+Kurta, R.~P., Altarelli, M., Weckert, E. \& Vartanyants, I.~A., 2012 {X-ray
+  cross-correlation analysis applied to disordered two-dimensional systems}.
+\newblock \emph{arXiv} .
+
+\bibitem{Kurta:2013to}
+Kurta, R.~P., Altarelli, M. \& Vartanyants, I.~A., 2013 {X-ray
+  cross-correlation analysis of disordered systems: potentials and
+  limitations}.
+\newblock \emph{arXiv} .
+
+\bibitem{Kirian:2011bq}
+Kirian, R.~A., Schmidt, K.~E., Wang, X., Doak, R.~B. \& Spence, J. C.~H., 2011
+  {Signal, noise, and resolution in correlated fluctuations from snapshot
+  small-angle x-ray scattering}.
+\newblock \emph{Phys. Rev. E} \textbf{84}, 011921.
+
+\bibitem{Cohen:2002jw}
+Cohen, A.~E., Ellis, P.~J., Miller, M.~D., Deacon, A.~M. \& Phizackerley,
+  R.~P., 2002 {cryocrystallography papers}.
+\newblock \emph{J. Appl. Cryst (2002). 35, 720-726
+  [doi:10.1107/S0021889802016709]} pp. 1--7.
+
+\bibitem{Levard:2011bx}
+Levard, C., Reinsch, B.~C., Michel, F.~M., Oumahi, C., Lowry, G.~V. \& Brown,
+  G.~E., Jr., 2011 {Sulfidation Processes of PVP-Coated Silver Nanoparticles in
+  Aqueous Solution: Impact on Dissolution Rate}.
+\newblock \emph{Environ. Sci. Technol.} \textbf{45}, 5260--5266.
+
+\bibitem{Henke:1993wx}
+Henke, B.~L., Gullikson, E.~M. \& Davis, J.~C., 1993 {X-Ray Interactions:
+  Photoabsorption, Scattering, Transmission, and Reflection at E= 50-30,000 eV,
+  Z= 1-92}.
+\newblock \emph{Atomic data and nuclear data tables} .
+
+\bibitem{Schroder:2010cm}
+Schr{\"o}der, G.~F., Levitt, M. \& Brunger, A.~T., 2010 {Super-resolution
+  biomolecular crystallography with low-resolution data}.
+\newblock \emph{Nature} \textbf{464}, 1218--1222.
+
+\bibitem{Neutze:2000ih}
+Neutze, R., Wouts, R., van~der Spoel, D., Weckert, E. \& Hajdu, J., 2000
+  {Potential for biomolecular imaging with femtosecond X-ray pulses.}
+\newblock \emph{Nature} \textbf{406}, 752--757.
+
+\bibitem{Spence:2012eo}
+Spence, J. C.~H., Weierstall, U. \& Chapman, H.~N., 2012 {X-ray lasers for
+  structural and dynamic biology}.
+\newblock \emph{Rep. Prog. Phys.} \textbf{75}, 102601.
+
+\end{thebibliography}
