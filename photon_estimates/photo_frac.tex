@@ -1,0 +1,65 @@
+\documentclass[fontsize=15pt, paper=a4]{amsart}
+%\documentclass[11pt]{amsart}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\setlength\arraycolsep{1.4pt}% some length
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{back of the envelope: Fraction of NP orientations which scatter into a q ring}
+\author{Derek Mendez}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+
+\maketitle
+
+\noindent Each nano-crystal produces a reciprocal lattice ( RL ) in q space, and the dimensionless width of each RL mota ( a mota is an inverse atom in q space, i.e. a 3D Bragg reflection) can be approximated using the Scherrer equation
+
+\begin{equation}
+\Delta_{2\theta} =\frac{K * \lambda}{s * cos(\theta)}
+\end{equation}
+\ \newline 
+\noindent where  $ \theta  $ is the Bragg angle, $K$ is a constant dependent on the particle shape, and $s$ is the cube root of the nano-particle volume . Therefore, the width of the mota in q-units is  
+
+\begin{equation}
+\Delta_{q}  = \frac{4\pi}{\lambda} sin(\Delta_{2\theta} ) 
+\end{equation}
+
+For the case of silver, the atomic lattice is face-centered-cubic with lattice constant $d= 4.090 \,\,\AA$, and this produces a body-centered-cubic RL with lattice constant $a= 4\pi / d =  3.07\,\, \AA^{-1}$. The strongest Bragg ring is $q_{111}$ which is equal to the space-diagonal of the RL bcc primitive cell, $\frac{\sqrt{3} \,a}{2} = 2.66 \,\,\AA^{-1} $. There are 8 motas at this magnitude. 
+
+\ \newline
+If one rotates the nano-particle through all possible orientations, then one can imagine these 8 motas tracing out spherical shells that each have volume
+
+\begin{equation}
+V = \frac{4}{3} \pi \left( \left ( q_{111} + \frac{\Delta_{q_{111}}}{2} \right )^{3} - \left (q_{111} - \frac{\Delta_{q_{111}}}{2} \right )^{3} \right)  
+\end{equation}
+
+The detector is sensitive to a fraction of this volume, call it the volume of intersection $\Delta V$. If a certain nano-particle orientation gives rise to a mota intersecting the detector, then $2\pi$ additional orientations automatically give rise to the signal (these are the rotations about the beam axis ) . And as the size of the mota is finite, we see that $\Delta V$ is the volume of a ring-torus with tube diameter $\Delta_{q_{111}}$ , and which encompasses the ring we see on the detector at $q_{111}$. That is
+
+\begin{equation}
+\Delta V =    \pi \left( \frac{\Delta_{q_{111}}} { 2} \right ) ^ {2} \left (2\pi q_{111}^{\,\perp} \right )  =   \pi \left( \frac{\Delta_{q_{111}}} { 2} \right ) ^ {2} \left (2\pi q_{111} cos(\theta )\right ) 
+\end{equation}
+
+(the $cos(\theta)$ factor is a result of Ewald curvature ). Because there are 8 mota under consideration, and we only care if one is intersecting at any given orientation , then the fraction of orientations which can potentially scatter into the detector at $q_{111}$ is $ \gamma_{1} \approx \frac{8 \Delta V}{V}$. For 20 nm particles at 17keV, $s = \sqrt[3]{\frac{4\pi}{3}} * 20$ nm $\approx 16.12$ nm ( remember s is cube root of particle volume ) , $\lambda = 0.07293$ nm and $K = 0.9$ ( wiki says $K$ is  0.9ish), we get $\Delta q_{111} = 0.0710 \AA^{-1}$. This corresponds to $\gamma_{1} \approx  0.083 $, or 8.3 \% of 20nm silver particle orientations scatter into $q_{111} $. 
+
+\ \newline
+Now we consider double scattering into $q_{111}$. Imagine you can rotate the silver NP such that one of it's $q_{111,1}$ motas intersects the detector. In order to see a double scattering we fix this mota and rotate the RL about the vector $\hat{q}_{111,1}$ until another mota intersects the detector. Since there are 8 motas at $q_{111}$, and we are fixing the vector $\hat{q}_{111,1}$, we can see that there are 6 motas which can potentially be the second Bragg reflection on the detector. As we rotate the RL about $\hat{q}_{111,1}$, each of these 6 motas traces out a volume
+
+\begin{equation}
+ V' = \pi \left( \frac{\Delta_{q_{111}}} { 2} \right ) ^ {2} \left (2\pi q_{111} \right ) 
+\end{equation}
+
+( note here Ewald curvature doesn't enter the equation ) . The fraction of orientations which have $q_{111,1}$ fixed and which have another $q_{111}$ mota intersecting the detector is equal to 
+
+\begin{equation}
+\gamma_{2,1} = \frac{ 6 * V_{mota}}{V'} = \frac{6 * \frac{4\pi}{3} * (\frac{\Delta_{q_{111}} } {2} )^{3}}{ \pi \left( \frac{\Delta_{q_{111}}} { 2} \right ) ^ {2} \left (2\pi q_{111} \right )} = \frac{2*\Delta_{q_{111}}}{\pi * q_{111}}
+\end{equation}
+
+ or 0.017 ( for 20 nm silver NPs at 17 keV ). Therefore, for 20 nm particles at 17keV, the fraction of orientations which have double Bragg reflections which can contribute to photon correlations is $ \gamma_{2,1} * \gamma_{1} = 0.017 * 0.083 = 0.0014,$ or 0.14 \%.
+
+\end{document}

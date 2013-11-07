@@ -1,0 +1,57 @@
+\documentclass[11pt]{amsart}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Estimate of Photon Scattering Statistics at SSRL}
+\author{Derek Mendez and TJ Lane}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+We estimate the number of photons scattered by a sample of randomly oriented nanoparticles that could lead to correlated scattering signal. Specifically, we focus on gold or silver nanoparticles, which have an FCC real space lattice, and consequentially a BCC reciprocal lattice.
+
+\subsection*{Total Photons Scattered per Particle}
+
+To be done!
+
+\subsection*{Fraction of Orientations Capable of Correlated Scattering}
+
+In order to observe a correlated scattering signal, a single particle must be able to scatter photons onto two separate regions of the detector. For ordered nanoparticle samples, this means that the particle must be oriented to diffract two (or more) simultaneous Bragg reflections -- two reciprocal lattice points must intersect the Ewald sphere.
+
+The volume of the reciprocal lattice points that satisfies the Bragg condition may be estimated from the Scherrer equation,
+\[
+\Delta(2 \theta) = \frac{K \lambda}{s \cos \theta}
+\]
+where $\lambda$ is the beam wavelength, $s$ is the cube root of the nanoparticle volume, $K \approx 0.9$ is a shape factor, and $2 \theta$ is the scattering angle. This equation directly implies a width in wavenumber units of
+\[
+\Delta q = 2k \sin \left( \frac{2 \pi K }{k s \cos \theta} \right)
+\]
+with $k$ the wavenumber.
+
+Consider a single reciprocal lattice point, a sphere with diameter $\Delta q$, as we rotate the nanoparticle through all possible orientations. We now compute the total solid angle $\Omega$ that meets the Bragg condition  -- \textit{i.e.}~the volume of the reciprocal lattice point intersects the Ewald sphere -- during this rotation. Let $a$ be the distance from the intersection of the beam to the reciprocal lattice point of interest (this depends on the Miller indices of the point -- fill in later). Then 
+
+The volume of intersection between the reciprocal lattice and the Ewald sphere forms a torus. The diameter of the torus will be approximately $\Delta q$ in the  limit $a \gg \Delta q$. The angular width of the torus, viewed from the origin, is therefore
+\[
+\phi = 2 \tan^{-1} \left( \frac{ \Delta q }{a} \right)
+\]
+Further, this torus is continuous over the entire $2 \pi$ rotation normal to the beam. It follows that the solid angle of orientations that intersect the Ewald sphere is $4 \pi (\phi / 2 \pi ) = 2 \phi$ steradians.
+
+\subsubsection*{Scattering to the First Ring}
+For the (111) Miller reflection, $q = 2.66 \AA^{-1}$ and for a 20 nm particle at 17 keV $\Delta q = 0.0710 \AA^{-1}$ (dermen). For a single reciprocal lattice point, I compute the probability of intersection over uniform rotations to be $0.74\%$, and for 8 degenerate points $5.8\%$.
+
+\subsubsection*{Double Scattering to the First Ring}
+TJL: Is the following correct?
+
+Consider now the conditional probability of a second reciprocal intersection given that one intersection occurred already. Fixing the first reciprocal lattice point at the point of intersection and rotating the reciprocal lattice around the axis defined by this intersection causes 3 other reciprocal volumes to pass through the Ewald sphere (all but the Friedel mate of the intersecting site). Each particle will intersect the sphere twice during this rotation. Thus, the fraction of the $2 \pi$ rotation during which a second sphere is intersecting the lattice is approximately $ 6 \phi / 2 \pi \approx 0.022$. It follows that the probability of a double intersection is $0.058 \cdot 0.022 = 0.1276 \%$.
+
+
+
+
+\end{document}  
