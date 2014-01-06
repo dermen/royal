@@ -81,8 +81,7 @@ Tools to study disordered systems with local structural order, such as proteins 
 
 {\bf Keywords/phrases} 
 
-x-ray angular correlations, silver nanoparticles, atomic resolution x-ray scattering, synchrotron radiation, solution ensemble, double Bragg scattering
-
+x-ray angular correlations, Bragg peak correlations, silver nanoparticles, atomic resolution x-ray scattering, synchrotron radiation, solution ensemble
 \section{Introduction}
 
 In a pioneering paper, Kam \cite{Kam:1977wc} showed that correlated x-ray scattering (CXS) from an ensemble of randomly oriented particles could in principle reveal information about the internal structure of the particles beyond usual small and wide angle solution scattering measurements. The extraction of such information in the absence of an ordered system (\textit{e.g.}~a crystal) can be beneficial in biological studies, as many biological systems with well defined local structural order are inherently disordered at large length scales.
@@ -91,7 +90,7 @@ In order to gauge the feasibility of Kam's method at atomic resolution and to as
 
 From these experiments, we obtained empirical correlation functions between all pixel pairs in two silver Bragg rings, corresponding to Miller indices 111 and 200. Preliminary analysis of the three correlation functions (two rings correlated with themselves and with each other) show sharp peaks consistent with analytical and simulated predictions based on the crystal structure of silver.
 
-By successfully measuring CXS signal from randomly oriented ensembles of silver NPs, we have demonstrated the effectiveness of Kam's method at atomic resolution. This experiment will serve as a benchmark for future experiments involving weaker scatterers, such as proteins. Refinement of our experimental technique on a well characterized sample (\textit{i.e.}~silver NPs) will also help facilitate the extension of CXS to studies of biomolecules in solution.
+By successfully measuring CXS signal from randomly oriented ensembles of silver NPs, we have demonstrated the effectiveness of Kam's method at atomic resolution. This experiment will serve as a benchmark for future experiments involving ensemble exposures. Refinement of our experimental technique on a well characterized sample (\textit{i.e.}~silver NPs) will also help facilitate the extension of CXS to studies of weaker scatterers in solution.
 
 \section{Theory}
 
@@ -124,19 +123,25 @@ In the special case of an isotropically oriented sample, Kam proved that the abs
 C(\bm q_1, \bm q_2)  \equiv C (q_1,q_2, \psi  )
 \]
 Experimentally, we statistically estimate this function by taking angular correlations in the detector plane; let $\phi$ be the azimuthal coordinate of $\bm q$ projected into the plane perpendicular to an incident beam (corresponding to the azimuthal coordinate of a pixel measuring $\bm q$ on a far-field planar detector). Let $\Delta = |\phi_{1} - \phi_{2}|$ be the angle between two such vector projections. Then define the average angular correlation of ring intensity fluctuations as
-\be
+\be \label{angular_shot}
 D_s(q_1,q_2, \Delta  ) = \int_{0}^{2\pi}  \Big ( n_s(q_1,\phi) -   \mu_s( q_1) \Big) \Big ( n_s(q_2,\phi + \Delta) -   \mu_s( q_2) \Big)  \, d\phi  
 \ee
 
-and its average
+and its average,
 
 \be \label{angular}
 D(q_1,q_2, \Delta  ) = \big \langle D_s(q_1,q_2, \Delta  ) \big \rangle_{s}
 \ee
 
-where $\mu_s( q)$ is the average photon counts at $q$ in snapshot $s$. Assuming randomly oriented particles, negligible inter-particle scattering (wide angles and/or a dilute sample), and a sufficiently large number of snapshots, $D (q_1,q_2, \Delta)$ will converge to a statistical estimate of the Kam correlation $C (q_1,q_2, \psi)$, up to a trigonometric conversion of $\Delta$ (the angle between $\bm q_1, \bm q_2$ projections on the plane of the detector) and $\psi$ (the angle between $\bm q_1, \bm q_2$).
+where $\mu_s( q)$ is the average photon counts at $q$ in snapshot $s$. Assuming randomly oriented particles, negligible inter-particle scattering (wide angles and/or a dilute sample), and a sufficiently large number of snapshots, $D (q_1,q_2, \Delta)$ will converge to a statistical estimate of the Kam correlation $C (q_1,q_2, \psi)$, up to a trigonometric conversion of $\Delta$ (the angle between $\bm q_1, \bm q_2$ projections on the plane of the detector) and $\psi$ (the angle between $\bm q_1, \bm q_2$). This is given by the relationship
 
-We have computed the expected angular correlation function (\ref{angular}) for the silver NPs studied as a benchmark for our experimental results (Figure \ref{fig:results}-B). A silver NP may be represented by a simple model consisting of a face-centered-cubic lattice cutoff by a spherical boundary. The scattering can then be represented by reciprocal lattice vectors intersecting the Ewald sphere and giving rise to Bragg peaks. Hence, each snapshot records a series of Bragg rings (henceforth we will only consider scattering vectors which meet the Bragg condition for silver, denoted by a set of Miller indices, $\bm q_{hkl}$). The sub-population of all NP orientations that simultaneously subtend two Bragg peaks on the Ewald sphere give rise to angular correlations. Therefore,  CXS signal appears at values of $\Delta $ corresponding to the geometry of the reciprocal lattice and the angles between reciprocal lattice vectors (Figure \ref{fig:setup}). For instance, we calculate that $D (q_{111},q_{111}, \Delta  )$ should display strong signal at $\Delta_1 = \arccos[ \frac{-2}{3\cos^{2}\theta} + 1  ]$ and $\Delta_2 = \arccos[ \frac{-4}{3\cos^{2}\theta} + 1  ]$ where $2\theta$ is the standard scattering angle.
+\be\label{trig}
+\cos \Delta = \frac{\cos \psi - \sin \theta_1 \sin \theta_2  }{ \cos \theta_1 \cos \theta_2} 
+\ee
+
+where $2 \theta_1$ and $2 \theta_2$ are the standard scattering angles of $\bm q_1$ and $\bm q_2$, respectively.
+
+We have computed the expected angular correlation function (\ref{angular}) for the silver NPs studied as a benchmark for our experimental results (Figure \ref{fig:results}-B). A silver NP may be represented by a simple model consisting of a face-centered-cubic lattice cutoff by a spherical boundary. The scattering can then be represented by reciprocal lattice vectors intersecting the Ewald sphere and giving rise to Bragg peaks. Hence, each snapshot records a series of Bragg rings (henceforth we will only consider scattering vectors which meet the Bragg condition for silver, denoted by a set of Miller indices, $\bm q_{hkl}$). The sub-population of all NP orientations that simultaneously subtend two Bragg peaks on the Ewald sphere give rise to angular correlations. Therefore,  CXS signal appears at values of $\Delta $ corresponding to the geometry of the reciprocal lattice and the angles between reciprocal lattice vectors (Figure \ref{fig:setup}). For instance, $D (q_{111},q_{111}, \Delta  )$ should display two peaks due to the two reciprocal lattice vectors of magnitude $q_{111}$ whose angles of separation $\psi_1$ and $\psi_2$ are given by $\cos \psi_1 = \frac{1}{3}$ and $\cos \psi_2 = -\frac{1}{3} $, respectively. The peak locations are found using (\ref{trig}):   $\Delta_1 = \arccos[ \frac{-2}{3\cos^{2}\theta_{111}} + 1  ]$ and $\Delta_2 = \arccos[ \frac{-4}{3\cos^{2}\theta_{111}} + 1  ]$ where $2\theta_{111}$ is the standard scattering angle of Bragg vector $\bm q_{111}$.
 
 
 It is clear that the function $C(\bm q_1, \bm q_2)$ in (\ref{correlation}) contains information about the structure of the particles under study. Even though one can show that inverting a complete set of such correlations to an image of the electron density (at arbitrary resolution) is an underdetermined problem \cite{Elser:2011ez}, we would like to emphasize that (\ref{correlation}) can be calculated using a model for the structure factor (\ref{structurefactor}) defined by a particle's atomic positions. This opens up the possibility for refining such a model against a CXS dataset using (\ref{converge}) \cite{Liu:2013dv, Chen:2013io, Saldin:2009jj}, especially in cases where prior information (such as protein primary sequence) can be included. Other routes to analyzing structure given CXS data include iterative phasing \cite{Saldin:2010bx}, alignment of particles \cite{Poon:2013ia}, or direct analysis of local internal symmetries of the system \cite{Kurta:2012cb, Kurta:2013to}.
@@ -165,7 +170,7 @@ Our goal was to record as many snapshots as possible, each one representing a di
 
 A bicubic interpolation algorithm was used to convert the cartesian pixel lattice to polar coordinates for calculation of (\ref{angular}). Using the Scherrer equation [8] relating the width of a Bragg ring to the average NP size, we concluded that the majority of silver NPs in each snapshot were roughly 20 nm in diameter. Histograms of photon counts into the $q_{111}$ Bragg ring indicate a rather large distribution of particle sizes (Figure \ref{fig:binary}-B) which we discuss in the following section.
 
-\section{Results}
+\section{Results and Discussion}
 
 
 \begin{figure}
@@ -180,7 +185,7 @@ A bicubic interpolation algorithm was used to convert the cartesian pixel lattic
 \begin{center}
 \includegraphics[ ]{./compare.eps}
 \end{center}
-\caption{ {\bf a)} Histogram of $D_s(q_{111}, q_{111}, \Delta = \Delta_1)$ over all shots on a log scale (raw data without any filter). Outliers were observed with values on order 1e8, and were removed (not shown). The large tails indicate the presence of very large crystals in the data which can contribute to correlations, and which can be accented by the binary filter. In order to check whether our results contain correlation contributions from the smaller particles as well, we selected shots with values of $D_s(q_{111}, q_{111}, \Delta = \Delta_1)$ between -200k and 200k (red dashed lines) {\bf b)} Same as a), but for $\Delta = \Delta_2$. {\bf c)} Plot of $D_s(q_{111}, q_{111}, \Delta =\Delta_1)$ vs shot index (raw data without any filter). The red lines mark the same region discussed in a). The local variance changes with shot index, reflecting sample anisotropies as we moved the capillary to take new rotational scans. {\bf d)} Same as c) but for $\Delta = \Delta_2$. {\bf e)} A raw, unfiltered plot of $D(q_{111}, q_{111}, \Delta)$ averaged over the 4208 shots determined by the red-dashed lines. Artificial correlations due to detector and sample anisotropies are similar in magnitude to the true correlation signal. {\bf f)} Same as e) but with application of the binary filter. }
+\caption{ Shows the shot-to-shot variance in the correlation function (\ref{angular_shot}). Large variance is due to the presence of large particles. We illustrate the effectiveness of the binary filter at removing systematic error induced correlations, even when the large particles fluctuations are minimized. {\bf a)} Histogram of $D_s(q_{111}, q_{111}, \Delta = \Delta_1)$ over all shots on a log scale (raw data without any filter). Outliers were observed with values on order 1e8, and were removed (not shown). The large tails indicate the presence of very large crystals in the data which can contribute to correlations. {\bf b)} Same as a), but for $\Delta = \Delta_2$. {\bf c)} Plot of $D_s(q_{111}, q_{111}, \Delta =\Delta_1)$ vs shot index (raw data without any filter). {\bf d)} Same as c) but for $\Delta = \Delta_2$. {\bf e)} A raw, unfiltered plot of $D(q_{111}, q_{111}, \Delta)$ where the average was taken over the 4208 shots where $200k \le D_s(q_{111}, q_{111}, \Delta = \Delta_1) \le 200k$ counts$^2$. Artificial correlations due to detector and sample anisotropies are similar in magnitude to the true correlation signal. {\bf f)} Same as e) but with application of the binary filter. }
 \label{fig:compare}
 \end{figure}
 
@@ -203,7 +208,7 @@ As mentioned in the Methods section, we infer from the width of the Bragg rings 
 
 However, many of the snapshots contained pixels at $q_{111}$ reporting photon counts as high as $\sim 8 \times 10^4$, much greater than one would expect given Poisson statistics, where fluctuations are order square-root of the mean. We therefore suspect our sample included a broad distribution of particle sizes, with larger particles scattering more photons, and thus larger particles contributing to the correlations. While the width of the powder ring indicates that the majority of NPs were roughly 20 nm, we can employ the Scherrer equation, to relate the width of the correlation peak to the contributing particle size (Figure \ref{fig:results}-C). The width of the measured correlation peak is consistent with 50 nm particles, thus we conclude that the measured correlations were most likely generated by scattering off of thousands of $\ge$ 50 nm particles per shot. We emphasize that this is an estimated lower bound on particle size;  NPs $>$ 50 nm would have even smaller Bragg reflections. Of all 50 nm silver NP orientations, we estimate that roughly 0.19\% will simultaneously subtend two Bragg peaks on the detector into $q_{111}$, 0.06\% will simultaneously subtend two Bragg peaks on the detector into $q_{200}$, and 0.15\% will simultaneously subtend one Bragg peak into each of $q_{111}$, $q_{200}$.
 
-We note that convergence of the correlations was not limited by the large number of randomly oriented particles in the beam. At present, the main impediment to accurate measurements of CXS arises from anisotropy artifacts induced by the detector system.  We have been able to partially overcome background correlations by nonlinear binary filtering and are continuing data processing with more sophisticated methods (Figure \ref{fig:compare}) .
+We note that convergence of the correlations was not limited by the statistical background noise which results from the presence of multiple particles per exposure, some of which only scatter one photon. At present, the main impediment to accurate measurements of CXS arises from anisotropy artifacts induced by the detector system.  We have been able to partially overcome background correlations by nonlinear binary filtering and are continuing data processing with more sophisticated methods (Figure \ref{fig:compare}) .
 
 \section{Conclusion}
 
