@@ -49,23 +49,24 @@
 \author[1]{ Derek Mendez }
 \author[3]{ Thomas J. Lane}
 \author[1,2]{Jongmin Sung}
-\author[6]{Jonas Sellberg}
-\author[4]{Cl\'ement Levard}
+\author[7]{Jonas Sellberg}
+\author[4,6]{Cl\'ement Levard}
 \author[1]{Herschel Watkins}
-\author[6]{Aina E. Cohen}
-\author[6]{Michael Soltis}
+\author[7]{Aina E. Cohen}
+\author[7]{Michael Soltis}
 \author[2,5]{Shirley Sutton}
 \author[2]{James Spudich}
 \author[3]{Vijay Pande}
-\author[6]{Daniel Ratner}
-\author[1,6]{Sebastian Doniach\thanks{corresponding author: sxdwc@slac.stanford.edu}}
+\author[7]{Daniel Ratner}
+\author[1,7]{Sebastian Doniach\thanks{corresponding author: sxdwc@slac.stanford.edu}}
 
 \affil[1]{Stanford University Department of Applied Physics, Stanford, CA 94305}
 \affil[2]{Stanford University Department of Biochemistry, Stanford, CA 94305}
 \affil[3]{Stanford University Department of Chemistry, Stanford, CA 94305}
-\affil[4]{Aix-Marseille Universit\'e, CNRS, IRD, CEREGE UM34, 13545 Aix en Provence, France}
+\affil[4]{Stanford University Department of Geological and Environmental Sciences, Stanford, CA 94305}
 \affil[5]{Stanford University School of Medicine, Stanford, CA 94305}
-\affil[6]{SLAC National Accelerator Laboratory, Menlo Park, CA 94025}
+\affil[6]{Aix-Marseille Universit\'e, CNRS, IRD, CEREGE UM34, 13545 Aix en Provence, France}
+\affil[7]{SLAC National Accelerator Laboratory, Menlo Park, CA 94025}
 
 \renewcommand\Authands{ and }
 \date{}
@@ -77,7 +78,7 @@
 {\bf Abstract}
 
 
-Tools to study disordered systems with local structural order, such as proteins in solution, remain limited. Such understanding is essential for \emph{e.g.}~rational drug design. Correlated x-ray scattering (CXS) has recently attracted new interest as a way to leverage next-generation light sources to study such disordered matter. The CXS experiment measures angular correlations of the intensity caused by the scattering of x-rays from an ensemble of identical particles, with disordered orientation and position. Averaging over 15,496 snapshot images obtained by exposing a sample of silver nanoparticles in solution to a micro-focused synchrotron radiation beam, we report on experimental efforts to obtain CXS signal from an ensemble in three dimensions. A correlation function was measured at  wide angles corresponding to atomic resolution that matches theoretical predictions. These preliminary results suggest that other CXS experiments on disordered ensembles -- such as proteins in solution -- may be feasible in the future.
+Tools to study disordered systems with local structural order, such as proteins in solution, remain limited. Such understanding is essential for \emph{e.g.}~rational drug design. Correlated x-ray scattering (CXS) has recently attracted new interest as a way to leverage next-generation light sources to study such disordered matter. Our CXS experiment measured angular correlations of the intensity caused by the scattering of x-rays from an ensemble of identical particles, with disordered orientation and position. Averaging over 15,496 snapshot images obtained by exposing a sample of silver nanoparticles in solution to a micro-focused synchrotron radiation beam, we report on experimental efforts to obtain CXS signal from an ensemble in three dimensions. A correlation function was measured at  wide angles corresponding to atomic resolution that matches theoretical predictions. These preliminary results suggest that other CXS experiments on disordered ensembles -- such as proteins in solution -- may be feasible in the future.
 
 
 {\bf Keywords/phrases} 
@@ -109,7 +110,7 @@ S(\bm q,\omega) = \left| \> \sum_{j} f_j (q )e^{i \bm q \cdot  \left( \hat{R}_\o
 \ee
 where $\bm q$ is the scattering momentum transfer vector,  $\bm r_j$ and $f_j (q )$ are the coordinates and form factor of the $j^{th}$ atom in the particle respectively, $\omega$ is a triple of Euler angles, $\hat{R}_\omega$ is a three-dimensional rotation operator, and the sum is over all atoms in the particle.
 
-Kam showed that if the distribution of particle rotations dictated by $\hat{R}_\omega$ is isotropic, distributed uniformly over $\omega$, then the structure factor correlation function
+Kam showed that if the distribution of particle rotations dictated by $\hat{R}_\omega$ is isotropic, distributed uniformly over the rotation group SO(3), then the structure factor correlation function
 \be \label{correlation}
 C(\bm q_1, \bm q_2) = \frac{1}{8 \pi^{2}}\int S( \bm q_{1},\omega ) S( \bm q_{2},\omega ) \, d \omega
 \ee
@@ -117,11 +118,11 @@ may be extracted from a CXS measurement where one repeatedly records snapshots o
 \be \label{converge}
 \big \langle   n_s(\bm q_1)  \, n_s(\bm q_2) \big \rangle_s  - \big \langle {n}_s(\bm q_1) \big \rangle_s \, \big \langle {n}_s(\bm q_2) \big \rangle_s  \Rightarrow N \, C(\bm q_1, \bm q_2) 
 \ee
-where $n_s(\bm q)$ is the total photons scattered from all particles in snapshot $s$ into a pixel along scattering vector $\bm q$. Neglecting inter-particle scattering interference, $n_s(\bm q)$ is governed by a Poisson distribution $\mathscr{P}(n_s(\bm q) \,|\, \mathscr{N}_s(\bm q))$ with mean
+where $n_s(\bm q)$ is the total photons scattered from all particles in snapshot $s$ into a pixel along scattering vector $\bm q$ and $N$ is the number of exposed particles in each shot (assumed here to be constant). Neglecting inter-particle scattering interference, and assuming a large number of incident photons per shot,
 \be \label{photon}
-\mathscr{N}_s(\bm q) \propto \sum_{\omega_\alpha \in \,\Gamma_{s} }^N S(\bm q,\omega_\alpha)
+n_s(\bm q) \propto \sum_{\omega_\alpha \in \,\Gamma_{s} }^N S(\bm q,\omega_\alpha)
  \ee
- where $\Gamma_{s}$ represents a set of $N$ independent, identically distributed samples of orientation space. Note that the correlation function on the LHS of (\ref{converge}) contains the isotropically averaged scattering, which we must subtract in order to recover (\ref{correlation}). 
+ where $\Gamma_{s}$ represents the set of particle orientations for shot $s$. Note that the correlation function on the LHS of (\ref{converge}) contains the isotropically averaged scattering, which is subtracted in order to recover (\ref{correlation}). 
 
 In this special case of an isotropically oriented sample, Kam proved that the absolute orientation of the $\bm q_1, \bm q_2$ scattering pair in the correlation function (\ref{correlation}) is irrelevant; the relevant covariates are only the magnitudes $| \bm q_1 | , | \bm q_2 | $ and the angle between the vectors, $\psi$. Thus the correlation function can be written 
 \[
